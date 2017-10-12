@@ -1,19 +1,21 @@
 //JavaScript Buy SDK
 var shopClient = ShopifyBuy.buildClient({
-    //API Key
-    accessToken: '01fca01ffb6bcc6e4450d6ed94e5d195',
+    //Buy Button Access Token
+    accessToken: '373f1694d25bedc5a69debe2ca8ed4a2',
     //Site URL
     domain: 'fresh-gatherer.myshopify.com',
-    //Password
-    appId: 'b43314de3e6ef4322bffd0c1e44f6b10'
+    //General Buy button ID
+    appId: '6'
   });
-console.log(shopClient);
 
-//Ajax API
-//Current URL is not working
-$.ajax({
-    url: 'https://01fca01ffb6bcc6e4450d6ed94e5d195:b43314de3e6ef4322bffd0c1e44f6b10@fresh-gatherer.myshopify.com/admin/orders.js',
-    method: 'GET'
-}).done(function(response){
-    console.log(response);
+var cart;
+shopClient.createCart().then(function (newCart) {
+  cart = newCart;
+  console.log(cart);
+  // do something with updated cart
+});
+
+//Retrieve a particular product with ID
+shopClient.fetchProduct('176946315293').then(product => {
+    console.log(product);
 });
