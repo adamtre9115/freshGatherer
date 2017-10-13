@@ -3,61 +3,144 @@
 
 <head>
     <title>Fresh Gatherer</title>
-    <!-- bootstrap 4 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <!-- personal css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="FreshGatherer.css">
     <link rel="shortcut icon" href="favicon.ico" />
-    
+    <script src="FreshGatherer.js"></script>
 
 </head>
 
 <body>
-
     <!-- Logo and Header -->
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="index.html">
-    <img src="assets/images/leaf.png" class="logo" width="100" height="100" class="d-inline-block align-top" alt="">
+    <img src="leaf.png" class="logo" width="100" height="100" class="d-inline-block align-top" alt="">
 </a>
+
         <div class="nav">
-        	<h1>FRESH GATHERER</h1>
-            <h2>HOW TO SMOOTHIE</h2>
-            <h2>SMOOTHIES</h2>
-            <h2>ABOUT US</h2>
-            <h2>CONTACT US</h2>
+            <h1>FRESH GATHERER</h1>
+            <button class="button" type="button" onclick="smoothScroll(document.getElementById('howtosmoothie'))"><h2>HOW TO SMOOTHIE</h2></button>
+            <button class="button" type="button" onclick="smoothScroll(document.getElementById('smoothie'))"><h2>SMOOTHIES</h2></button>
+            <button class="button" type="button" onclick="smoothScroll(document.getElementById('team'))"><h2>OUR TEAM</h2></button>
+            <button class="button" type="button" onclick="smoothScroll(document.getElementById('contact'))"><h2>CONTACT US</h2></button>
         </div>
     </nav>
-
-
     <!--Header Smoothie Photo-->
     <div class="bg">
-    	<img src="assets/images/smoothie.jpg">
+        <img src="smoothie.jpg">
+    </div>
+    <!--How to Smoothie Section with Icons -->
+    <div class="text-center" id="howtosmoothie">
+    <div class="howtosmoothie">Choose Your Blends <img src="website.png" class="straw">
+        <p>Choose any combination of delicious superfood eats, developed by a nutritionist and made craveable by a chef.</p>
+    </div>
+    <div class="howtosmoothie">Check Your Doorstep <img src="truck.png" class="straw">
+        <p>Your pre-portioned cups will arrive ready to pop in your freezer + blend, soak or heat on your schedule</p>
+    </div>
+    <div class="howtosmoothie">Blend Ingredients<img src="straw.png" class="straw">
+        <p>Simply add a liquid base to your cup and blend, soak or heat. No prep, no mess.</p>
     </div>
 
-<!--How to Smoothie Section with Icons -->
-    <div class="howtosmoothie">Choose Your Blends <img src="straw.png" class="straw">
-    <p>Choose any combination of delicious superfood eats, developed by a nutritionist and made craveable by a chef.</p>
+
+    <!--Smoothies-->
+    <div class="text-center" id="smoothie">
+    <h4>SMOOTHIES</h4>
+
+	<div class="smoothie"><img src="chocolate.png" class="smoothie">
+		<p>Chocolate & Blueberry</p>
 	</div>
 
-    <div class="howtosmoothie">Check Your Doorstep <img src="truck.png" class="straw">
-    <p>Your pre-portioned cups will arrive ready to pop in your freezer + blend, soak or heat on your schedule</p>
+	<div class="smoothie"><img src="coldbrew.png" class="smoothie">
+		<p>Cold Brew & Almond</p>
 	</div>
 
-    <div class="howtosmoothie">Blend Ingredients<img src="website.png" class="straw">
-    <p>Simply add a liquid base to your cup and blend, soak or heat. No prep, no mess.</p>
+	<div class="smoothie"><img src="carrot.png" class="smoothie">
+		<p>Carrot & Chia</p>
 	</div>
 
+	<div class="smoothie"><img src="cacao.png" class="smoothie">
+		<p>Carrot & Apricot</p>
+	</div>
+
+	<div class="smoothie"><img src="blueberry.png" class="smoothie">
+		<p>Carrot & Apricot</p>
+	</div>
+	<br>
+
+	<div class="smoothie"><img src="banana.png" class="smoothie">
+		<p>Carrot & Apricot</p>
+	</div>
+
+	<div class="smoothie"><img src="apple.png" class="smoothie">
+		<p>Cacao & Avocado</p>
+	</div>
+
+	<div class="smoothie"><img src="acai.png" class="smoothie">
+		<p>Acai & Cherry</p>
+	</div>
+
+	<div class="smoothie"><img src="papaya.png" class="smoothie">
+		<p>Mango & Papaya</p>
+	</div>
+
+	<div class="smoothie"><img src="mango.png" class="smoothie">
+		<p>Mango & Camu</p>
+	</div>
+	<br>
+
+	<div class="smoothie"><img src="strawberry.png" class="smoothie">
+		<p>Strawberry & Peach</p>
+	</div>
+
+	<div class="smoothie"><img src="mint.png" class="smoothie">
+		<p>Mint & Cacao</p>
+	</div>
+
+	<div class="smoothie"><img src="pineapple.png" class="smoothie">
+		<p>Pineapple & Matcha</p>
+	</div>
+
+	<div class="smoothie"><img src="watermelon.png" class="smoothie">
+		<p>Watermelon & Cucumber</p>
+	</div>
+
+	<div class="smoothie"><img src="chocolate.png" class="smoothie">
+		<p>Chocolate & Blueberry</p>
+	</div>
+</div>
 
 
+	<!--About our Team-->
+	<br>
+	<br>
+	<div class=text-center id="team">
+	<h4>OUR TEAM</h4>
+    <img src="allie.png" class="team"></div>
+    <img src="leaf.png" class="team"></div>
+    <img src="leaf.png" class="team"></div>
+    <img src="leaf.png" class="team"></div>
+</div>
 
-<!--FOOTER 
-<footer>
-	<h3>FRESH GATHERER</h3>
-    <img src="fresh.png" class="logo">
-</footer>
-End of Footer -->
+<!--Contact Us -->
+<div class=text-center id="contact">
+<h4>CONTACT US</h4>
+</div>
 
+    <!--FOOTER -->
+    <footer>
+        <a href="index.html">
+    <img src="leaf.png" class="footer"></a>
+        <a href="https://twitter.com/ABCSharkTank" target="_blank">
+    <img src="twitter.png" class="social"></a>
+        <a href="https://www.instagram.com/sharktankabc/?hl=en" target="_blank">
+    <img src="instagram.png" class="social"></a>
+        <a href="https://www.facebook.com/SharkTank/" target="_blank">
+    <img src="facebook.png" class="social"></a>
+        <a href="https://www.linkedin.com/in/alliejaccard/" target="_blank">
+    <img src="linkedin.png" class="social"></a>
+    </footer>
 
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
@@ -65,7 +148,7 @@ End of Footer -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!--JavaScript Buy SDK (Shopify)-->
 <script src="http://sdks.shopifycdn.com/js-buy-sdk/v0/latest/shopify-buy.umd.polyfilled.min.js"></script>
-<script src="assets/js/app.js"></script>
+<script src="assets/js/app.js"></script>  
 </body>
 
 </html>
