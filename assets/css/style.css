@@ -1,11 +1,11 @@
 h1 {
-	font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 72px;
     font-weight: lighter;
     letter-spacing: 3px;
-    text-align: center;
     color: #526555;
-    margin-right: 170px;
+    margin-left: 120px;
+    margin-right: 35px;
 }
 
 h2 {
@@ -17,18 +17,49 @@ h2 {
 }
 
 h3 {
-	font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 48px;
     font-weight: lighter;
     letter-spacing: 3px;
     text-align: center;
     color: white;
-} 
+}
+
+.button {
+  font-size: 24px;
+  text-align: center;
+  color: #fff;
+  background-color: #f8f9fa;
+  border: none;
+}
+
+.button:hover {
+	background-color: #74b657;
+	border-radius: 5px;
+
+}
+
+.button:active {
+  background-color: #74b657;
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+
+h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 72px;
+    font-weight: lighter;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #526555;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
 
 p {
-	font-size: 12px;
-	margin-top: 10px;
-	letter-spacing: 1px;
+    font-size: 12px;
+    margin-top: 10px;
+    letter-spacing: 1px;
 }
 
 img {
@@ -42,38 +73,45 @@ img {
 }
 
 .straw {
-	margin-top: 10px;
-	width: 100px;
-	height: 100px;
-	box-shadow: none;
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    box-shadow: none;
 }
 
 .logo {
-	width: 100px;
-	height: 100px;
-	margin-top: 10px;
-	margin-left: 10px;
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .bg {
-    margin-bottom: 40px;
+    margin-bottom: 70px;
 }
 
 .howtosmoothie {
-	display: inline-block;
-    width: 300px;
+    display: inline-block;
+    width: 400px;
     height: 350px;
-    margin: 10px;
     background-color: white;
     text-align: center;
-   	font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 32px;
     font-weight: lighter;
     letter-spacing: 3px;
     text-align: center;
     color: #526555;
-    margin-left: 180px;
+    margin: 50px;
+}
 
+.smoothie {
+    width: 200px;
+    height: 200px;
+    border-radius: none;
+    box-shadow: none;
+    display: inline-block;
+    margin: 10px;
 }
 
 footer {
@@ -89,5 +127,27 @@ footer {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: lighter;
     letter-spacing: 5px;
-    background-color: #526555;
+    background-color: #74b657;
+}
+
+.team {
+	 width: 200px;
+    height: 200px;
+	display: inline-block;
+}
+
+.footer {
+    width: 100px;
+    height: 100px;
+}
+
+
+.social {
+    width: 50px;
+    height: 50px;
+    border-radius: none;
+    box-shadow: none;
+    margin: 0 auto;
+    background-color: #74b657;
+    display: inline-block;
 }
