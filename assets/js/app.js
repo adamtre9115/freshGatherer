@@ -29,15 +29,18 @@ shopClient.fetchAllProducts().then(products => {
         var newSmoothie = $("<div>");
 
         // Create a new dive to hold smoothie description
-        var smoothieInfo = $("<div>");
+        var smoothieInfo = $("<div>").addClass("infoDiv reveal");
 
         // Create a button to show smoothie description
-        var smoothieButton = $("<button>").text("See More");
+        var smoothieButton = $("<button>").addClass("moreBtn").text("See More");
+        
+        // create h4 for smoothie title
+        var smoothieTitle = $("<h6>").addClass("title");
 
+        smoothieTitle.html(products[i].attrs.title)
         // add description to smoothie div
         smoothieInfo.html(products[i].attrs.body_html);
 
-        smoothieInfo.addClass("reveal");
         //Create a new image element with specified dimensions
 
         var newImage = $("<img width = '350' height = '350'>");
@@ -49,7 +52,7 @@ shopClient.fetchAllProducts().then(products => {
         newImage.attr("src", products[i].attrs.images[i].src);
 
         //Append new attributes to the div that holds the product
-        newSmoothie.append(newImage, smoothieButton, smoothieInfo, products[i].attrs.title);
+        newSmoothie.append(newImage, smoothieTitle, smoothieButton, smoothieInfo);
 
         //Append the newSmoothie div to the section on the HTML file
         $("section").append(newSmoothie);
@@ -80,3 +83,9 @@ shopClient.fetchProduct('176946315293').then(product => {
         document.location.href = cart.checkoutUrl;
         //Implement Shopify Sandbox for card info
     */
+
+/**********
+ 
+  JS Effect
+
+ *********/ 

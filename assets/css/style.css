@@ -4,15 +4,15 @@ h1 {
     font-weight: lighter;
     letter-spacing: 3px;
     color: #526555;
-    margin-left: 120px;
-    margin-right: 35px;
+    margin-left: 140px;
+    margin-right: 5px;
 }
 
 h2 {
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
     color: #526555;
-    margin: 30px;
+    margin: 15px;
     font-weight: lighter;
 }
 
@@ -52,8 +52,6 @@ h4 {
     letter-spacing: 3px;
     text-align: center;
     color: #526555;
-    margin-bottom: 20px;
-    margin-top: 20px;
 }
 
 p {
@@ -82,12 +80,8 @@ img {
 .logo {
     width: 100px;
     height: 100px;
-    margin-top: 10px;
-    margin-left: 10px;
-}
-
-.bg {
-    margin-bottom: 70px;
+    margin-top: 5px;
+    margin-left: 30px;
 }
 
 .howtosmoothie {
@@ -102,7 +96,9 @@ img {
     letter-spacing: 3px;
     text-align: center;
     color: #526555;
-    margin: 50px;
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 
 .smoothie {
@@ -112,6 +108,10 @@ img {
     box-shadow: none;
     display: inline-block;
     margin: 10px;
+}
+
+.reveal {
+    display: none;
 }
 
 footer {
@@ -131,16 +131,16 @@ footer {
 }
 
 .team {
-	 width: 200px;
+	width: 200px;
     height: 200px;
-	display: inline-block;
+	display: inline;
+	margin: 20px;
 }
 
 .footer {
     width: 100px;
     height: 100px;
 }
-
 
 .social {
     width: 50px;
