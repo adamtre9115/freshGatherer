@@ -11,11 +11,12 @@ var shopClient = ShopifyBuy.buildClient({
   console.log(shopClient);
 
 //Create a cart
-var cart;
+var newCart;
 shopClient.createCart().then(function (newCart) {
-  cart = newCart;
-  console.log(cart.attrs);
+//   cart = newCart;
+  console.log(newCart.attrs);
   // do something with updated cart
+  $("#total").text(newCart.subtotal);
 });
 
 //Retrieve all products (test)
@@ -23,16 +24,33 @@ shopClient.fetchAllProducts().then(products => {
     console.log(products);
     //Append all products to html element
     for (var i = 0; i < products.length; i++) {
+
         //Create a new div to hold the product
         var newSmoothie = $("<div>");
+
+        // Create a new dive to hold smoothie description
+        var smoothieInfo = $("<div>");
+
+        // Create a button to show smoothie description
+        var smoothieButton = $("<button>").text("See More");
+
+        // add description to smoothie div
+        smoothieInfo.html(products[i].attrs.body_html);
+
+        smoothieInfo.addClass("reveal");
         //Create a new image element with specified dimensions
+
         var newImage = $("<img width = '350' height = '350'>");
+
         //Add necessary classes
         newImage.addClass("smoothie");
+
         //Set image source to currently iterated product
         newImage.attr("src", products[i].attrs.images[i].src);
+
         //Append new attributes to the div that holds the product
-        newSmoothie.append(newImage, products[i].attrs.title);
+        newSmoothie.append(newImage, smoothieButton, smoothieInfo, products[i].attrs.title);
+
         //Append the newSmoothie div to the section on the HTML file
         $("section").append(newSmoothie);
     }
