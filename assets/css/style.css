@@ -169,6 +169,10 @@ img {
     margin: 10px;
 }
 
+.reveal {
+    display: none;
+}
+
 footer {
     margin-top: 40px;
     right: 0;
@@ -196,7 +200,6 @@ footer {
     width: 100px;
     height: 100px;
 }
-
 
 .social {
     width: 50px;
