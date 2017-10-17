@@ -25,4 +25,9 @@ $(document).ready(function () {
         scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
     }
     // end smooth scroll
+
+    //On  any button click...
+    $(document).on("click", "button", function(){
+        console.log(this);
+    });
 });
