@@ -52,6 +52,30 @@ h4 {
     letter-spacing: 3px;
     text-align: center;
     color: #526555;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+h5 {
+     font-family: 'Open Sans', sans-serif;
+    font-size: 32px;
+    font-weight: lighter;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #526555;
+    margin-top: 20px;
+}
+
+h6 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #526555;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 10px;
 }
 
 p {
@@ -70,11 +94,46 @@ img {
     margin: 0 auto;
 }
 
+#buy {
+    border-radius: 3px;
+    background-color: #74b657;
+    border: 5px #74b657 solid;
+    width: 350px;
+}
+
+#buy:hover {
+    background-color: #6ba850;
+    border: 5px #6ba850 solid;
+}
+
+#buy:active {
+  background-color: #6ba850;
+    border: 5px #6ba850 solid;
+  box-shadow: 0 2px #6ba850;
+  transform: translateY(4px);
+}
+
 .straw {
     margin-top: 10px;
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 200px;
     box-shadow: none;
+}
+
+.howto {
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+    box-shadow: none;
+}
+
+.plan {
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 350px;
+    height: 400px;
+    margin: 80px;
+    margin-top: 10px;
 }
 
 .logo {
