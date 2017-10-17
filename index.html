@@ -5,7 +5,7 @@
     <title>Fresh Gatherer</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="shortcut icon" href="assets/images/favicon.ico"/>
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
     <script src="assets/js/app.js"></script>
 </head>
 
@@ -19,7 +19,7 @@
             <h1>FRESH GATHERER</h1>
             <button class="button" type="button" onclick="smoothScroll(document.getElementById('howtosmoothie'))">
                 <h2>HOW TO SMOOTHIE</h2></button>
-                <button class="button" type="button" onclick="smoothScroll(document.getElementById('plan'))">
+            <button class="button" type="button" onclick="smoothScroll(document.getElementById('plan'))">
                 <h2>CHOOSE YOUR PLAN</h2></button>
             <button class="button" type="button" onclick="smoothScroll(document.getElementById('smoothie'))">
                 <h2>SMOOTHIES</h2></button>
@@ -34,76 +34,46 @@
         <img src="assets/images/smoothie.jpg">
     </div>
     <!--How to Smoothie Section with Icons -->
-    <div class="text-center" id="howtosmoothie">
-        <div class="howtosmoothie">Choose Your Blends <img src="assets/images/website.png" class="straw">
+    <div class="text-center" id='howtosmoothie'>
+        <div class="howtosmoothie">Choose Your Blends <img src="assets/images/website.png" class="howto">
             <p>Choose any combination of delicious superfood eats, developed by a nutritionist and made craveable by a chef.</p>
         </div>
-        <div class="howtosmoothie">Check Your Doorstep <img src="assets/images/truck.png" class="straw">
+        <div class="howtosmoothie">Check Your Doorstep <img src="assets/images/truck.png" class="howto">
             <p>Your pre-portioned cups will arrive ready to pop in your freezer + blend, soak or heat on your schedule</p>
         </div>
-        <div class="howtosmoothie">Blend Ingredients<img src="assets/images/straw.png" class="straw">
+        <div class="howtosmoothie">Blend Ingredients<img src="assets/images/straw.png" class="howto">
             <p>Simply add a liquid base to your cup and blend, soak or heat. No prep, no mess.</p>
         </div>
-
         <!--Choose Your Plan-->
-		<div class="text-center" id="plan">
-			<h4>CHOOSE YOUR PLAN</h4>
-
-
-		</div>
-
-
+        <div class="text-center" id="plan">
+            <h4>CHOOSE YOUR PLAN</h4>
+            <div class="plan">
+                <h5><i>Baby Seedling</i></h5>
+                <img src="assets/images/plan1.png" class="straw">
+                <h6><strong>10 Smoothie Blends</strong></h6>
+                <h6>$7.50 per smoothie | $75.00 per box</h6>
+                <button id="buy">BLEND ME!</button>
+            </div>
+            <div class="plan">
+                <h5><i>Fender Blender</i></h5>
+                <img src="assets/images/plan2.png" class="straw">
+                <h6><strong>20 Smoothie Blends</strong></h6>
+                <h6>$7.00 per smoothie | $140.00 per box</h6>
+                <button id="buy">BLEND ME!</button>
+            </div>
+            <div class="plan">
+                <h5><i>Smooth Operator</i></h5>
+                <img src="assets/images/plan3.png" class="straw">
+                <h6><strong>30 Smoothie Blends</strong></h6>
+                <h6>$6.50 per smoothie | $195.00 per box</h6>
+                <button id="buy">BLEND ME!</button>
+            </div>
+        </div>
         <!--Smoothies-->
         <div class="text-center" id="smoothie">
             <h4>SMOOTHIES</h4>
-            <div class="smoothie"><img src="assets/images/chocolate.png" class="smoothie">
-                <p>Chocolate & Blueberry</p>
-            </div>
-            <div class="smoothie"><img src="assets/images/coldbrew.png" class="smoothie">
-                <p>Cold Brew & Almond</p>
-            </div>
-            <div class="smoothie"><img src="assets/images/carrot.png" class="smoothie">
-                <p>Carrot & Chia</p>
-            </div>
-            <div class="smoothie"><img src="assets/images/cacao.png" class="smoothie">
-                <p>Carrot & Apricot</p>
-            </div>
-            <div class="smoothie"><img src="assets/images/blueberry.png" class="smoothie">
-                <p>Carrot & Apricot</p>
-            </div>
-            <br>
-            <div class="smoothie"><img src="assets/images/banana.png" class="smoothie">
-                <p>Carrot & Apricot</p>
-            </div>
-            <div class="smoothie"><img src="assets/images/apple.png" class="smoothie">
-                <p>Cacao & Avocado</p>
-            </div>
-            <div class="smoothie"><img src="assets/images/acai.png" class="smoothie">
-                <p>Acai & Cherry</p>
-            </div>
-            <div class="smoothie"><img src="assets/images/papaya.png" class="smoothie">
-                <p>Mango & Papaya</p>
-            </div>
-            <div class="smoothie"><img src="assets/images/mango.png" class="smoothie">
-                <p>Mango & Camu</p>
-            </div>
-            <br>
-            <div class="smoothie"><img src="assets/images/strawberry.png" class="smoothie">
-                <p>Strawberry & Peach</p>
-            </div>
-            <div class="smoothie"><img src="assets/images/mint.png" class="smoothie">
-                <p>Mint & Cacao</p>
-            </div>
-            <div class="smoothie"><img src="assets/images/pineapple.png" class="smoothie">
-                <p>Pineapple & Matcha</p>
-            </div>
-            <div class="smoothie"><img src="assets/images/watermelon.png" class="smoothie">
-                <p>Watermelon & Cucumber</p>
-            </div>
-            <div class="smoothie"><img src="assets/images/chocolate.png" class="smoothie">
-                <p>Chocolate & Blueberry</p>
-            </div>
         </div>
+        
         <!--About our Team-->
         <div class="team" id="team">
             <h4>OUR TEAM</h4>
@@ -112,11 +82,9 @@
             <img src="assets/images/leaf.png" class="team">
             <img src="assets/images/leaf.png" class="team">
         </div>
-        
         <!--Contact Us -->
         <div class=text-center id="contact">
             <h4>CONTACT US</h4>
-
         </div>
         <!--FOOTER -->
         <footer>
