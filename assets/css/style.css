@@ -26,23 +26,22 @@ h3 {
 }
 
 .button {
-  font-size: 24px;
-  text-align: center;
-  color: #fff;
-  background-color: #f8f9fa;
-  border: none;
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+    background-color: #f8f9fa;
+    border: none;
 }
 
 .button:hover {
-	background-color: #74b657;
-	border-radius: 5px;
-
+    background-color: #74b657;
+    border-radius: 5px;
 }
 
 .button:active {
-  background-color: #74b657;
-  box-shadow: 0 2px #666;
-  transform: translateY(4px);
+    background-color: #74b657;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
 }
 
 h4 {
@@ -57,7 +56,11 @@ h4 {
 }
 
 h5 {
+<<<<<<< HEAD
      font-family: 'Open Sans', sans-serif;
+=======
+    font-family: 'Open Sans', sans-serif;
+>>>>>>> c16cd8d75f358a8c3dffcafd48f6e76305525143
     font-size: 32px;
     font-weight: lighter;
     letter-spacing: 3px;
@@ -76,12 +79,20 @@ h6 {
     margin-top: 20px;
     margin-bottom: 20px;
     line-height: 10px;
+<<<<<<< HEAD
+=======
+}
+
+.h7 {
+    font-size: 32px;
+>>>>>>> c16cd8d75f358a8c3dffcafd48f6e76305525143
 }
 
 p {
     font-size: 12px;
     margin-top: 10px;
     letter-spacing: 1px;
+    padding: 20px;
 }
 
 img {
@@ -94,6 +105,18 @@ img {
     margin: 0 auto;
 }
 
+<<<<<<< HEAD
+=======
+.dropdown-menu {
+    height: 200px;
+    overflow: auto;
+}
+
+.dropdown-item:hover {
+    background-color: #74b657;
+}
+
+>>>>>>> c16cd8d75f358a8c3dffcafd48f6e76305525143
 #buy {
     border-radius: 3px;
     background-color: #74b657;
@@ -107,10 +130,17 @@ img {
 }
 
 #buy:active {
+<<<<<<< HEAD
   background-color: #6ba850;
     border: 5px #6ba850 solid;
   box-shadow: 0 2px #6ba850;
   transform: translateY(4px);
+=======
+    background-color: #6ba850;
+    border: 5px #6ba850 solid;
+    box-shadow: 0 2px #6ba850;
+    transform: translateY(4px);
+>>>>>>> c16cd8d75f358a8c3dffcafd48f6e76305525143
 }
 
 .straw {
@@ -169,6 +199,26 @@ img {
     margin: 10px;
 }
 
+#modalbox {
+    margin: 50px;
+}
+
+.checkout {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+    display: block;
+    margin: 0 auto;
+}
+
+.options {
+    width: 200px;
+    height: 200px;
+    margin-top: 50px;
+}
+
 .reveal {
     display: none;
 }
@@ -190,10 +240,10 @@ footer {
 }
 
 .team {
-	width: 200px;
+    width: 200px;
     height: 200px;
-	display: inline;
-	margin: 20px;
+    display: inline;
+    margin: 20px;
 }
 
 .footer {

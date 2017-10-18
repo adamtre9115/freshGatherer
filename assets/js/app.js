@@ -36,7 +36,7 @@ $(document).ready(function(){
             var newSmoothie = $("<img>").addClass("smoothie").attr({
                 "src": products[x].attrs.images[0].src,
                 "data-toggle": "modal",
-                "data-target": "product-modal",
+                "data-target": ".bd-example-modal-lg",
                 "smoothie-title" : products[x].attrs.title,
                 "smoothie-details": products[x].attrs.body_html
             });
@@ -52,19 +52,23 @@ $(document).ready(function(){
         }
 
         //On subscription click...
-        $(document).on("click", ".plan", function(){
+        $(document).on("click", ".plan-btn", function(){
             //update user's subscription
             plan = $(this).attr("data-value");
-            console.log(plan);
+            //update plan-btn innerHTML
+            //...
         });
 
         //On smoothie click...
         $(document).on("click", ".smoothie", function(){
             console.log(this);
             //update the modal content
-                //img.attr("src", $(this).attr("src"))
-                //header.html($(this).attr("smoothie-title"))
-                //paragraph.html($(this).attr("smoothie-details"))
+                //Image
+                $(".modal-img").attr("src", $(this).attr("src"));
+                //Title
+                $(".h7").html($(this).attr("smoothie-title"));
+                //Details
+                $(".details").html($(this).attr("smoothie-details"));
         });
 
         //On add click...
