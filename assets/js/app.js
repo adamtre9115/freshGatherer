@@ -62,11 +62,16 @@ $(document).ready(function(){
         $(document).on("click", ".smoothie", function(){
             console.log(this);
             //update the modal content
+                //img.attr("src", $(this).attr("src"))
+                //header.html($(this).attr("smoothie-title"))
+                //paragraph.html($(this).attr("smoothie-details"))
         });
 
         //On add click...
         $(document).on("click", ".add-btn", function(){
             console.log(this);
+            //get product variant
+            //get product quantity
             //add product variant/qty to cart
         });
 
@@ -77,9 +82,6 @@ $(document).ready(function(){
         });
 
     });
-
-    
-    
 
     /*Retrieve product based on ID (test)
     shopClient.fetchProduct('176946315293').then(product => {
