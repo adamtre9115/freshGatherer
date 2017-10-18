@@ -7,32 +7,29 @@
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="shortcut icon" href="assets/images/favicon.ico" />
-    <script src="assets/js/app.js"></script>
+    <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <!-- Logo and Header -->
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="index.html">
-            <img src="leaf.png" class="logo" width="100" height="100" class="d-inline-block align-top" alt="">
-        </a>
+    <img src="assets/images/leaf.png" class="logo" width="100" height="100" class="d-inline-block align-top" alt="">
+</a>
         <div class="text-center" id="nav">
             <h1>FRESH GATHERER</h1>
             <button class="button" type="button" onclick="smoothScroll(document.getElementById('howtosmoothie'))">
-                <h2>HOW TO SMOOTHIE</h2>
-            </button>
+                <h2>HOW TO SMOOTHIE</h2></button>
             <button class="button" type="button" onclick="smoothScroll(document.getElementById('plan'))">
-                <h2>CHOOSE YOUR PLAN</h2>
-            </button>
+                <h2>CHOOSE YOUR PLAN</h2></button>
             <button class="button" type="button" onclick="smoothScroll(document.getElementById('smoothie'))">
-                <h2>SMOOTHIES</h2>
-            </button>
+                <h2>SMOOTHIES</h2></button>
             <button class="button" type="button" onclick="smoothScroll(document.getElementById('team'))">
-                <h2>OUR TEAM</h2>
-            </button>
+                <h2>OUR TEAM</h2></button>
             <button class="button" type="button" onclick="smoothScroll(document.getElementById('contact'))">
-                <h2>CONTACT US</h2>
-            </button>
+                <h2>CONTACT US</h2></button>
         </div>
     </nav>
     <!--Header Smoothie Photo-->
@@ -40,82 +37,86 @@
         <img src="assets/images/smoothie.jpg">
     </div>
     <!--How to Smoothie Section with Icons -->
-    <div class="text-center" id="howtosmoothie">
-        <div class="howtosmoothie">Choose Your Blends
-            <img src="assets/images/website.png" class="straw">
+    <div class="text-center" id='howtosmoothie'>
+        <div class="howtosmoothie">Choose Your Blends <img src="assets/images/website.png" class="howto">
             <p>Choose any combination of delicious superfood eats, developed by a nutritionist and made craveable by a chef.</p>
         </div>
-        <div class="howtosmoothie">Check Your Doorstep
-            <img src="assets/images/truck.png" class="straw">
+        <div class="howtosmoothie">Check Your Doorstep <img src="assets/images/truck.png" class="howto">
             <p>Your pre-portioned cups will arrive ready to pop in your freezer + blend, soak or heat on your schedule</p>
         </div>
-        <div class="howtosmoothie">Blend Ingredients
-            <img src="assets/images/straw.png" class="straw">
+        <div class="howtosmoothie">Blend Ingredients<img src="assets/images/straw.png" class="howto">
             <p>Simply add a liquid base to your cup and blend, soak or heat. No prep, no mess.</p>
         </div>
-
         <!--Choose Your Plan-->
         <div class="text-center" id="plan">
             <h4>CHOOSE YOUR PLAN</h4>
-
-
+            <div class="plan" data-value = 10>
+                <h5><i>Baby Seedling</i></h5>
+                <img src="assets/images/plan1.png" class="straw">
+                <h6><strong>10 Smoothie Blends</strong></h6>
+                <h6>$7.50 per smoothie | $75.00 per box</h6>
+                <button id="buy">BLEND ME!</button>
+            </div>
+            <div class="plan" data-value = 20>
+                <h5><i>Fender Blender</i></h5>
+                <img src="assets/images/plan2.png" class="straw">
+                <h6><strong>20 Smoothie Blends</strong></h6>
+                <h6>$7.00 per smoothie | $140.00 per box</h6>
+                <button id="buy">BLEND ME!</button>
+            </div>
+            <div class="plan" data-value = 30>
+                <h5><i>Smooth Operator</i></h5>
+                <img src="assets/images/plan3.png" class="straw">
+                <h6><strong>30 Smoothie Blends</strong></h6>
+                <h6>$6.50 per smoothie | $195.00 per box</h6>
+                <button id="buy">BLEND ME!</button>
+            </div>
         </div>
-
         <!--Smoothies-->
         <div class="text-center" id="smoothie">
             <h4>SMOOTHIES</h4>
-            
-            <!-- New smoothies appended here-->
             <section>
-               
-                <!--New smoothie!-->
+                <!-- Smoothies will appear here -->
             </section>
-            
-
-            <!--About our Team-->
-            <div class="team" id="team">
-                <h4>OUR TEAM</h4>
-                <img src="assets/images/allie.png" class="team">
-                <img src="assets/images/tresean2.jpg" class="team">
-                <img src="assets/images/Keivon.jpg" class="team">
-                <img src="assets/images/leaf.png" class="team">
-            </div>
-
-            <!--Contact Us -->
-            <div class=text-center id="contact">
-                <h4>CONTACT US</h4>
-            </div>
-
-            <!--FOOTER -->
-            <footer>
-                <a href="index.html">
-                    <img src="assets/images/leaf.png" class="footer">
-                </a>
-                <a href="https://twitter.com/ABCSharkTank" target="_blank">
-                    <img src="assets/images/twitter.png" class="social">
-                </a>
-                <a href="https://www.instagram.com/sharktankabc/?hl=en" target="_blank">
-                    <img src="assets/images/instagram.png" class="social">
-                </a>
-                <a href="https://www.facebook.com/SharkTank/" target="_blank">
-                    <img src="assets/images/facebook.png" class="social">
-                </a>
-                <a href="https://www.linkedin.com/in/alliejaccard/" target="_blank">
-                    <img src="assets/images/linkedin.png" class="social">
-                </a>
-            </footer>
-
-            <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-            <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-            <!--jQuery Ajax Library
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
-            <!--JavaScript Buy SDK (Shopify)-->
-            <script src="http://sdks.shopifycdn.com/js-buy-sdk/v0/latest/shopify-buy.umd.polyfilled.min.js"></script>
-            <!-- <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script> -->
-            <script src="assets/js/experience.js"></script>
-            <script src="assets/js/app.js"></script>
+        </div>
+        
+        <!--About our Team-->
+        <div class="team" id="team">
+            <h4>OUR TEAM</h4>
+            <img src="assets/images/allie.png" class="team">
+            <img src="assets/images/tresean2.jpg" class="team">
+            <img src="assets/images/keivon.jpg" class="team">
+            <img src="assets/images/leaf.png" class="team">
+        </div>
+        <!--Contact Us -->
+        <div class=text-center id="contact">
+            <h4>CONTACT US</h4>
+        </div>
+        <!--FOOTER -->
+        <footer>
+            <a href="index.html">
+    <img src="assets/images/leaf.png" class="footer"></a>
+            <a href="https://twitter.com/ABCSharkTank" target="_blank">
+    <img src="assets/images/twitter.png" class="social"></a>
+            <a href="https://www.instagram.com/sharktankabc/?hl=en" target="_blank">
+    <img src="assets/images/instagram.png" class="social"></a>
+            <a href="https://www.facebook.com/SharkTank/" target="_blank">
+    <img src="assets/images/facebook.png" class="social"></a>
+            <a href="https://www.linkedin.com/in/alliejaccard/" target="_blank">
+    <img src="assets/images/linkedin.png" class="social"></a>
+        </footer>
+        
+        <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        <!--jQuery Ajax Library
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+        <!--JavaScript Buy SDK (Shopify)-->
+        <script src="http://sdks.shopifycdn.com/js-buy-sdk/v0/latest/shopify-buy.umd.polyfilled.min.js"></script>
+        <!-- <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script> -->
+        <script src="assets/js/experience.js"></script>
+        <script src="assets/js/app.js"></script>
 </body>
 
 </html>
