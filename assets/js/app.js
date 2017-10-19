@@ -13,10 +13,10 @@ var shopClient = ShopifyBuy.buildClient({
 $(document).ready(function(){
     
     //Store user's plan type (required quantity)
-    var plan;
+    var plan = 0;
     //Store total quantity selected
     var totalQuantity = 0;
-
+    //Store selected quantity (amount per item)
     var selectedQuantity = 0;
 
     //Create a cart
@@ -104,7 +104,9 @@ $(document).ready(function(){
         //On checkout click...
         $(document).on("click", ".checkout-btn", function(){
             console.log(this);
-            //generate checkout URL
+            //If user meets plan qty and plan != 0...
+                //user can click checkout btn
+                //generate checkout URL
         });
 
     });
