@@ -10,39 +10,33 @@ var shopClient = ShopifyBuy.buildClient({
 });
 
 //When document is ready...
-$(document).ready(function(){
-    
+$(document).ready(function () {
+
     //Store user's plan type (required quantity)
     var plan = 0;
+    //Store user's plan costA
+    var planCost = 0;
     //Store total quantity selected
     var totalQuantity = 0;
     //Store selected quantity (amount per item)
     var selectedQuantity = 0;
 
-    //Create a cart
-    var newCart;
-    shopClient.createCart().then(function (newCart) {
-        console.log(newCart.attrs);
-        // do something with updated cart
-        $("#total").text(newCart.subtotal);
-    });
-
     //Retrieve all products available on the Shopify store
     shopClient.fetchAllProducts().then(products => {
         console.log(products);
-        
+
         //Append all products to HTML element
         for (var x = 0; x < products.length; x++) {
-            
+
             //New image element with smoothie class, image src, modal attributes, and product information
             var newSmoothie = $("<img>").addClass("smoothie").attr({
                 "src": products[x].attrs.images[0].src,
                 "data-toggle": "modal",
                 "data-target": ".bd-example-modal-lg",
                 "smoothie-ID": products[x].attrs.product_id,
-                "variant-ID" : products[x].attrs.variants[0].id,
-                "in-stock"   : products[x].attrs.variants[0].available,
-                "smoothie-title"  : products[x].attrs.title,
+                "variant-ID": products[x].attrs.variants[0].id,
+                "in-stock": products[x].attrs.variants[0].available,
+                "smoothie-title": products[x].attrs.title,
                 "smoothie-details": products[x].attrs.body_html
             });
 
@@ -56,57 +50,74 @@ $(document).ready(function(){
             $("section").append(newDiv);
         }
 
+        //Create a cart
+        var cart;
+        shopClient.createCart().then(function (newCart) {
+            cart = newCart;
+            //console.log(newCart.attrs);
+            // do something with updated cart
+            //$("#total").text(newCart.subtotal);
+        });
+
         //On subscription click...
-        $(document).on("click", ".plan-btn", function(){
+        $(document).on("click", ".plan-btn", function () {
             //update user's subscription
             plan = $(this).attr("data-value");
+            planCost = $(this).attr("plan-cost");
             //update plan-btn innerHTML
             //...
         });
 
         //On smoothie click...
-        $(document).on("click", ".smoothie", function(){
+        $(document).on("click", ".smoothie", function () {
             //update the modal content
-                //Image, product/variant ID, availability
-                $(".modal-img").attr({
-                    "src": $(this).attr("src"),
-                    "smoothie-ID": $(this).attr("smoothie-ID"),
-                    "variant-ID" : $(this).attr("variant-ID"),
-                    "in-stock"   : $(this).attr("in-stock")
-                });
-                //Title
-                $(".modal-title").html($(this).attr("smoothie-title"));
-                //Details
-                $(".modal-details").html($(this).attr("smoothie-details"));
+            //Image, product/variant ID, availability
+            $(".modal-img").attr({
+                "src": $(this).attr("src"),
+                "smoothie-ID": $(this).attr("smoothie-ID"),
+                "variant-ID": $(this).attr("variant-ID"),
+                "in-stock": $(this).attr("in-stock")
+            });
+            //Title
+            $(".modal-title").html($(this).attr("smoothie-title"));
+            //Details
+            $(".modal-details").html($(this).attr("smoothie-details"));
         });
 
         //On add click...
-        $(document).on("click", ".add-btn", function(){
+        $(document).on("click", ".add-btn", function () {
             //If the item is in stock...(true)
-            if($(".modal-img").attr("in-stock")){
+            if ($(".modal-img").attr("in-stock")) {
                 //get product ID
-                console.log($(".modal-img").attr("smoothie-ID"));
+                var productID = $(".modal-img").attr("smoothie-ID");
+                console.log(productID);
                 //get variant ID
-                console.log($(".modal-img").attr("variant-ID"));
+                var variantID = $(".modal-img").attr("variant-ID")
+                console.log(variantID);
                 //get product quantity
                 selectedQuantity = parseInt($("#quantity").val());
                 console.log(selectedQuantity);
                 //add to total quantity
                 totalQuantity += selectedQuantity;
                 //add product variant/qty to cart
-                //...
-            }
-            else{
+                cart.createLineItemsFromVariants({
+                    variant: productID.variantID,
+                    quantity: selectedQuantity
+                }).then(function (cart) {
+                    console.log(cart);
+                    console.log(planCost);
+                });
+            } else {
                 console.log("Item is not in stock.");
             }
         });
 
         //On checkout click...
-        $(document).on("click", ".checkout-btn", function(){
+        $(document).on("click", ".checkout-btn", function () {
             console.log(this);
             //If user meets plan qty and plan != 0...
-                //user can click checkout btn
-                //generate checkout URL
+            //user can click checkout btn
+            //generate checkout URL
         });
 
     });
@@ -117,19 +128,19 @@ $(document).ready(function(){
     });*/
 
     //Add items to the cart
-        //Get product.selectedVariant, quantity selected (.val() from HTML)
-        /* Example code ...
-            cart.createLineItemsFromVariants({variant: product.selectedVariant, quantity: 1}).then(function (cart) {
-                // do something with updated cart
-            }); 
-        */
+    //Get product.selectedVariant, quantity selected (.val() from HTML)
+    /* Example code ...
+        cart.createLineItemsFromVariants({variant: product.selectedVariant, quantity: 1}).then(function (cart) {
+            // do something with updated cart
+        }); 
+    */
 
     //Checkout with updated cart
-        //Use cart.checkoutURL to generate a checkout URL with current cart
-        /*Example Code
-            document.location.href = cart.checkoutUrl;
-            //Implement Shopify Sandbox for card info
-        */
+    //Use cart.checkoutURL to generate a checkout URL with current cart
+    /*Example Code
+        document.location.href = cart.checkoutUrl;
+        //Implement Shopify Sandbox for card info
+    */
 
 
 });

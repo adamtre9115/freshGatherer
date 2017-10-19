@@ -243,3 +243,26 @@ footer {
     background-color: #74b657;
     display: inline-block;
 }
+
+#backtop {
+    position: fixed;
+    left: auto;
+    right: 20px;
+    top: auto;
+    bottom: 20px;
+    outline: none;
+    overflow: hidden;
+    color: silver;
+    text-align: center;
+    opacity: .85;
+    background-color: #526555;
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    border-radius: 2px;
+    border: 2px solid silver;
+    cursor: pointer;
+    transition: all .3s linear;
+    z-index: 999999;
+}
