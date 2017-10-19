@@ -26,23 +26,22 @@ h3 {
 }
 
 .button {
-  font-size: 24px;
-  text-align: center;
-  color: #fff;
-  background-color: #f8f9fa;
-  border: none;
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+    background-color: #f8f9fa;
+    border: none;
 }
 
 .button:hover {
-	background-color: #74b657;
-	border-radius: 5px;
-
+    background-color: #74b657;
+    border-radius: 5px;
 }
 
 .button:active {
-  background-color: #74b657;
-  box-shadow: 0 2px #666;
-  transform: translateY(4px);
+    background-color: #74b657;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
 }
 
 h4 {
@@ -57,7 +56,7 @@ h4 {
 }
 
 h5 {
-     font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 32px;
     font-weight: lighter;
     letter-spacing: 3px;
@@ -78,10 +77,15 @@ h6 {
     line-height: 10px;
 }
 
+.modal-title {
+    font-size: 32px;
+}
+
 p {
     font-size: 12px;
     margin-top: 10px;
     letter-spacing: 1px;
+    padding: 20px;
 }
 
 img {
@@ -92,6 +96,15 @@ img {
     height: 450px;
     display: block;
     margin: 0 auto;
+}
+
+.dropdown-menu {
+    height: 200px;
+    overflow: auto;
+}
+
+.dropdown-item:hover {
+    background-color: #74b657;
 }
 
 #buy {
@@ -107,10 +120,10 @@ img {
 }
 
 #buy:active {
-  background-color: #6ba850;
+    background-color: #6ba850;
     border: 5px #6ba850 solid;
-  box-shadow: 0 2px #6ba850;
-  transform: translateY(4px);
+    box-shadow: 0 2px #6ba850;
+    transform: translateY(4px);
 }
 
 .straw {
@@ -169,6 +182,26 @@ img {
     margin: 10px;
 }
 
+#modalbox {
+    margin: 50px;
+}
+
+.checkout {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+    display: block;
+    margin: 0 auto;
+}
+
+.options {
+    width: 200px;
+    height: 200px;
+    margin-top: 50px;
+}
+
 .reveal {
     display: none;
 }
@@ -190,10 +223,10 @@ footer {
 }
 
 .team {
-	width: 200px;
+    width: 200px;
     height: 200px;
-	display: inline;
-	margin: 20px;
+    display: inline;
+    margin: 20px;
 }
 
 .footer {
@@ -209,4 +242,27 @@ footer {
     margin: 0 auto;
     background-color: #74b657;
     display: inline-block;
+}
+
+#backtop {
+    position: fixed;
+    left: auto;
+    right: 20px;
+    top: auto;
+    bottom: 20px;
+    outline: none;
+    overflow: hidden;
+    color: silver;
+    text-align: center;
+    opacity: .85;
+    background-color: #526555;
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    border-radius: 2px;
+    border: 2px solid silver;
+    cursor: pointer;
+    transition: all .3s linear;
+    z-index: 999999;
 }
