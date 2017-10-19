@@ -29,7 +29,7 @@ $(document).ready(function () {
         for (var x = 0; x < products.length; x++) {
 
             //New image element with smoothie class, image src, modal attributes, and product information
-            var newSmoothie = $("<img>").addClass("smoothie").attr({
+            var newSmoothie = $("<img>").addClass("smoothie img-fluid").attr({
                 "src": products[x].attrs.images[0].src,
                 "data-toggle": "modal",
                 "data-target": ".bd-example-modal-lg",
@@ -44,17 +44,16 @@ $(document).ready(function () {
             var smoothieTitle = $("<h6>").html(products[x].attrs.title);
 
             //Append newSmoothie to a div that contains the entire product
-            var newDiv = $("<div>").append(newSmoothie, smoothieTitle);
+            var newDiv = $("<div class = 'col-md-3'>").append(newSmoothie, smoothieTitle);
 
             //Append the newSmoothie div to the section on the HTML file
             $("section").append(newDiv);
         }
 
         //Create a cart
-        var cart;
+        var newCart;
         shopClient.createCart().then(function (newCart) {
-            cart = newCart;
-            //console.log(newCart.attrs);
+            console.log(newCart.attrs);
             // do something with updated cart
             //$("#total").text(newCart.subtotal);
         });
@@ -66,22 +65,6 @@ $(document).ready(function () {
             planCost = $(this).attr("plan-cost");
             //update plan-btn innerHTML
             //...
-        });
-
-        //On smoothie click...
-        $(document).on("click", ".smoothie", function () {
-            //update the modal content
-            //Image, product/variant ID, availability
-            $(".modal-img").attr({
-                "src": $(this).attr("src"),
-                "smoothie-ID": $(this).attr("smoothie-ID"),
-                "variant-ID": $(this).attr("variant-ID"),
-                "in-stock": $(this).attr("in-stock")
-            });
-            //Title
-            $(".modal-title").html($(this).attr("smoothie-title"));
-            //Details
-            $(".modal-details").html($(this).attr("smoothie-details"));
         });
 
         //On add click...
@@ -100,17 +83,36 @@ $(document).ready(function () {
                 //add to total quantity
                 totalQuantity += selectedQuantity;
                 //add product variant/qty to cart
-                cart.createLineItemsFromVariants({
+                newCart.createLineItemsFromVariants({
                     variant: productID.variantID,
                     quantity: selectedQuantity
-                }).then(function (cart) {
-                    console.log(cart);
+                }).then(function (newCart) {
+                    console.log(newCart);
                     console.log(planCost);
                 });
             } else {
                 console.log("Item is not in stock.");
             }
         });
+        
+        //On smoothie click...
+        $(document).on("click", ".smoothie", function () {
+            //update the modal content
+            //Image, product/variant ID, availability
+            $(".modal-img").attr({
+                "src": $(this).attr("src"),
+                "class": "img-fluid",
+                "smoothie-ID": $(this).attr("smoothie-ID"),
+                "variant-ID": $(this).attr("variant-ID"),
+                "in-stock": $(this).attr("in-stock")
+            });
+            //Title
+            $(".modal-title").html($(this).attr("smoothie-title"));
+            //Details
+            $(".modal-details").html($(this).attr("smoothie-details"));
+        });
+
+        
 
         //On checkout click...
         $(document).on("click", ".checkout-btn", function () {
