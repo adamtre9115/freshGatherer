@@ -56,11 +56,7 @@ h4 {
 }
 
 h5 {
-<<<<<<< HEAD
-     font-family: 'Open Sans', sans-serif;
-=======
     font-family: 'Open Sans', sans-serif;
->>>>>>> c16cd8d75f358a8c3dffcafd48f6e76305525143
     font-size: 32px;
     font-weight: lighter;
     letter-spacing: 3px;
@@ -79,13 +75,10 @@ h6 {
     margin-top: 20px;
     margin-bottom: 20px;
     line-height: 10px;
-<<<<<<< HEAD
-=======
 }
 
-.h7 {
+.modal-title {
     font-size: 32px;
->>>>>>> c16cd8d75f358a8c3dffcafd48f6e76305525143
 }
 
 p {
@@ -105,8 +98,6 @@ img {
     margin: 0 auto;
 }
 
-<<<<<<< HEAD
-=======
 .dropdown-menu {
     height: 200px;
     overflow: auto;
@@ -116,7 +107,6 @@ img {
     background-color: #74b657;
 }
 
->>>>>>> c16cd8d75f358a8c3dffcafd48f6e76305525143
 #buy {
     border-radius: 3px;
     background-color: #74b657;
@@ -130,17 +120,10 @@ img {
 }
 
 #buy:active {
-<<<<<<< HEAD
-  background-color: #6ba850;
-    border: 5px #6ba850 solid;
-  box-shadow: 0 2px #6ba850;
-  transform: translateY(4px);
-=======
     background-color: #6ba850;
     border: 5px #6ba850 solid;
     box-shadow: 0 2px #6ba850;
     transform: translateY(4px);
->>>>>>> c16cd8d75f358a8c3dffcafd48f6e76305525143
 }
 
 .straw {
