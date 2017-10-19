@@ -47,7 +47,7 @@ $(document).ready(function () {
             var newDiv = $("<div class = 'col-md-3'>").append(newSmoothie, smoothieTitle);
 
             //Append the newSmoothie div to the section on the HTML file
-            $("section").append(newDiv);
+            $("#shopifyImg").append(newDiv);
         }
 
         //Create a cart
