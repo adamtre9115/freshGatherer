@@ -1,5 +1,4 @@
 //JavaScript Buy SDK
-//Ready up the shop
 var shopClient = ShopifyBuy.buildClient({
     //Buy Button Access Token
     accessToken: '373f1694d25bedc5a69debe2ca8ed4a2',
@@ -12,18 +11,17 @@ var shopClient = ShopifyBuy.buildClient({
 //When document is ready...
 $(document).ready(function () {
 
-    //Store user's plan type (required quantity)
-    var plan = 0;
-    //Store user's plan costA
-    var planCost = 0;
-    //Store total quantity selected
-    var totalQuantity = 0;
-    //Store selected quantity (amount per item)
-    var selectedQuantity = 0;
+    //Store user's plan and planCost
+    var plan = 0, planCost = 0;
+
+    //Create a cart
+    var cart;
+    shopClient.createCart().then( newCart => {
+        cart = newCart;
+    });
 
     //Retrieve all products available on the Shopify store
-    shopClient.fetchAllProducts().then(products => {
-        console.log(products);
+    shopClient.fetchAllProducts().then( products => {
 
         //Append all products to HTML element
         for (var x = 0; x < products.length; x++) {
@@ -49,100 +47,55 @@ $(document).ready(function () {
             //Append the newSmoothie div to the section on the HTML file
             $("#shopifyImg").append(newDiv);
         }
+    });
+    
+    //On add click...
+    $(document).on("click", ".add-btn", function () {
+        var productID = parseInt($(".modal-img").attr("smoothie-ID"));
+        var variantID = parseInt($(".modal-img").attr("variant-ID"));
+        var amount    = parseInt($("#quantity").val());
 
-        //Create a cart
-        var newCart;
-        shopClient.createCart().then(function (newCart) {
-            console.log(newCart.attrs);
-            // do something with updated cart
-            //$("#total").text(newCart.subtotal);
+        shopClient.fetchProduct(productID).then( product => {
+            /*cart.createLineItemsFromVariants({
+                variant: product.variantID,
+                quantity: selQuantity
+            }).then(cart => {
+                console.log(cart);
+            });*/
+            console.log(product);
+        })
+    })
 
-           }); 
-           
-           //On add click...
-            $(document).on("click", ".add-btn", function () {
-                //If the item is in stock...(true)
-                //if ($(".modal-img").attr("in-stock") === "true") {
-                //get product ID
-                var productID = parseInt($(".modal-img").attr("smoothie-ID"));
-                console.log(productID);
-                //get variant ID
-                var variantID = parseInt($(".modal-img").attr("variant-ID"));
-                console.log(variantID);
-                //get product quantity
-                selectedQuantity = parseInt($("#quantity").val());
-                console.log(selectedQuantity);
-                //add to total quantity
-                totalQuantity += selectedQuantity;
-                //add product variant/qty to cart
-                newCart.createLineItemsFromVariants({
-                    variant: productID.variantID,
-                    quantity: selectedQuantity
-                }).then(function (newCart) {
-                    console.log(newCart);
-                    console.log(planCost);
-                });
-                
-            })
-
-        //On subscription click...
-        $(document).on("click", ".plan-btn", function () {
-            //update user's subscription
-            plan = $(this).attr("data-value");
-            planCost = $(this).attr("plan-cost");
-            //update plan-btn innerHTML
-            //...
-        });
-
-        ;
-        
-        //On smoothie click...
-        $(document).on("click", ".smoothie", function () {
-            //update the modal content
-            //Image, product/variant ID, availability
-            $(".modal-img").attr({
-                "src": $(this).attr("src"),
-                "smoothie-ID": $(this).attr("smoothie-ID"),
-                "variant-ID": $(this).attr("variant-ID"),
-                "in-stock": $(this).attr("in-stock")
-            });
-            //Title
-            $(".modal-title").html($(this).attr("smoothie-title"));
-            //Details
-            $(".modal-details").html($(this).attr("smoothie-details"));
-        });
-
-        
-
-        //On checkout click...
-        $(document).on("click", ".checkout-btn", function () {
-            console.log(this);
-            //If user meets plan qty and plan != 0...
-            //user can click checkout btn
-            //generate checkout URL
-        });
-
+    //On subscription click...
+    $(document).on("click", ".plan-btn", function () {
+        //update user's subscription
+        plan = $(this).attr("data-value");
+        planCost = $(this).attr("plan-cost");
+        //update plan-btn innerHTML
+        //...
     });
 
-    /*Retrieve product based on ID (test)
-    shopClient.fetchProduct('176946315293').then(product => {
-        console.log(product);
-    });*/
+    //On smoothie click update the modal content
+    $(document).on("click", ".smoothie", function () {
+        //Image, product/variant ID, availability
+        $(".modal-img").attr({
+            "src": $(this).attr("src"),
+            "smoothie-ID": $(this).attr("smoothie-ID"),
+            "variant-ID": $(this).attr("variant-ID"),
+            "in-stock": $(this).attr("in-stock")
+        });
+        //Title
+        $(".modal-title").html($(this).attr("smoothie-title"));
+        //Details
+        $(".modal-details").html($(this).attr("smoothie-details"));
+    });
 
-    //Add items to the cart
-    //Get product.selectedVariant, quantity selected (.val() from HTML)
-    /* Example code ...
-        cart.createLineItemsFromVariants({variant: product.selectedVariant, quantity: 1}).then(function (cart) {
-            // do something with updated cart
-        }); 
-    */
-
-    //Checkout with updated cart
-    //Use cart.checkoutURL to generate a checkout URL with current cart
-    /*Example Code
-        document.location.href = cart.checkoutUrl;
-        //Implement Shopify Sandbox for card info
-    */
-
+    //On checkout click...
+    $(document).on("click", ".checkout-btn", function () {
+        console.log(this);
+        //If user meets plan qty and plan != 0...
+        //user can click checkout btn
+        //generate checkout URL
+    });
 
 });
