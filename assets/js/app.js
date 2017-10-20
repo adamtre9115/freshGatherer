@@ -51,20 +51,21 @@ $(document).ready(function () {
     
     //On add click...
     $(document).on("click", ".add-btn", function () {
+        //Grab product ID and quantity from the modal (which displays selected product)
         var productID = parseInt($(".modal-img").attr("smoothie-ID"));
-        var variantID = parseInt($(".modal-img").attr("variant-ID"));
         var amount    = parseInt($("#quantity").val());
 
+        //Retrieve info from shopify...
         shopClient.fetchProduct(productID).then( product => {
-            /*cart.createLineItemsFromVariants({
-                variant: product.variantID,
-                quantity: selQuantity
+            //Then add product to cart
+            cart.createLineItemsFromVariants({
+                variant: product.selectedVariant,
+                quantity: amount
             }).then(cart => {
                 console.log(cart);
-            });*/
-            console.log(product);
-        })
-    })
+            });
+        });
+    });
 
     //On subscription click...
     $(document).on("click", ".plan-btn", function () {
