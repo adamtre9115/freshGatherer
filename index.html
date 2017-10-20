@@ -3,13 +3,11 @@
 
 <head>
     <title>Fresh Gatherer</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="shortcut icon" href="assets/images/favicon.ico" />
     <!-- bootstrap 4 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -39,12 +37,10 @@
             </button>
         </div>
     </nav>
-
     <!--Header Smoothie Photo-->
     <div class="bg">
         <img src="assets/images/smoothie.jpg">
     </div>
-
     <!--How to Smoothie Section with Icons -->
     <div class="text-center" id='howtosmoothie'>
         <div class="howtosmoothie">Choose Your Blends
@@ -59,45 +55,35 @@
             <img src="assets/images/straw.png" class="howto">
             <p>Simply add a liquid base to your cup and blend, soak or heat. No prep, no mess.</p>
         </div>
-
         <!--Choose Your Plan-->
         <div class="text-center" id="plan">
             <h4>CHOOSE YOUR PLAN</h4>
             <div class="plan">
                 <h5>
-                    <i>Baby Seedling</i>
+                    <i>WEEKLY</i>
                 </h5>
-                <img src="assets/images/plan1.png" class="straw">
+                <img src="assets/images/plan23.png" class="straw">
                 <h6>
-                    <strong>10 Smoothie Blends</strong>
+
+
+
+                    <strong>7 Smoothie Blends</strong>
                 </h6>
-                <h6>$7.50 per smoothie | $75.00 per box</h6>
-                <button type="button" id="buy" class="btn btn-outline-success plan-btn" data-value=1 0>BLEND ME!</button>
+                <h6>$7.50 per smoothie | $52.50 per box</h6>
+                <button type="button" id="buy" class="btn btn-outline-success plan-btn" data-value=1 0>Select Weekly Plan</button>
             </div>
             <div class="plan">
                 <h5>
-                    <i>Fender Blender</i>
+                    <i>MONTHLY</i>
                 </h5>
-                <img src="assets/images/plan2.png" class="straw">
+                <img src="assets/images/plan23.png" class="straw">
                 <h6>
-                    <strong>20 Smoothie Blends</strong>
+                    <strong>24 Smoothie Blends</strong>
                 </h6>
-                <h6>$7.00 per smoothie | $140.00 per box</h6>
-                <button type="button" id="buy" class="btn btn-outline-success plan-btn" data-value=2 0>BLEND ME!</button>
-            </div>
-            <div class="plan">
-                <h5>
-                    <i>Smooth Operator</i>
-                </h5>
-                <img src="assets/images/plan3.png" class="straw">
-                <h6>
-                    <strong>30 Smoothie Blends</strong>
-                </h6>
-                <h6>$6.50 per smoothie | $195.00 per box</h6>
-                <button type="button" id="buy" class="btn btn-outline-success plan-btn" data-value=3 0>BLEND ME!</button>
+                <h6>$6.50 per smoothie | $156.00 per box</h6>
+                <button type="button" id="buy" class="btn btn-outline-success plan-btn" data-value=3 0>Select Monthly Plan</button>
             </div>
         </div>
-
         <!--Smoothies-->
         <section id="smoothie">
             <h4>SMOOTHIES</h4>
@@ -108,7 +94,6 @@
             </div>
             <!-- end container -->
         </section>
-
         <!--BEGIN smoothie modal==================================-->
     </div>
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -117,7 +102,6 @@
                 <div class="container">
                     <div id="modalbox">
                         <div class="row">
-
                             <!--Smoothie image-->
                             <div class="col-md-4">
                                 <img src="" class="modal-img img-fluid">
@@ -153,24 +137,33 @@
         </div>
     </div>
     <!--END smoothie modal==================================-->
-
     <!--About our Team-->
     <div class="text-center" id="team">
         <h4>OUR TEAM</h4>
         <img src="assets/images/allie.png" class="team">
         <img src="assets/images/tresean2.jpg" class="team">
         <img src="assets/images/keivon.jpg" class="team">
-        <img src="assets/images/leaf.png" class="team">
+        <img src="assets/images/miguel.png" class="team">
     </div>
     <!--Contact Us -->
     <div class=text-center id="contact">
         <h4>CONTACT US</h4>
     </div>
-
+    <div class="container">
+        <form action="/action_page.php">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+            <label for="email">Email Address</label>
+            <input type="text" id="email" name="email" placeholder="Your email address..">
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
     <!-- back to top  -->
-
     <div id="backtop" data-v-w="300, 800"> &#9650;</div>
-
     <!--FOOTER -->
     <footer>
         <a href="index.html">
@@ -189,14 +182,10 @@
             <img src="assets/images/linkedin.png" class="social">
         </a>
     </footer>
-
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <!--jQuery Ajax Library
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
     <!--JavaScript Buy SDK (Shopify)-->
