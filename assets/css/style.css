@@ -98,6 +98,11 @@ img {
     margin: 0 auto;
 }
 
+.smoothie:hover,
+button:hover {
+    cursor: pointer;
+}
+
 .dropdown-menu {
     height: 200px;
     overflow: auto;
