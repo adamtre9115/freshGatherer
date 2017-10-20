@@ -12,16 +12,18 @@ var shopClient = ShopifyBuy.buildClient({
 $(document).ready(function () {
 
     //Store user's plan name, plan quantity, and plan cost
-    var planName = "", planQty = 0, planCost = 0;
+    var planName = "",
+        planQty = 0,
+        planCost = 0;
 
     //Create a cart
     var cart;
-    shopClient.createCart().then( newCart => {
+    shopClient.createCart().then(newCart => {
         cart = newCart;
     });
 
     //Retrieve all products available on the Shopify store
-    shopClient.fetchAllProducts().then( products => {
+    shopClient.fetchAllProducts().then(products => {
 
         //Append all products to HTML element
         for (var x = 0; x < products.length; x++) {
@@ -48,15 +50,15 @@ $(document).ready(function () {
             $("#shopifyImg").append(newDiv);
         }
     });
-    
+
     //On add-btn click...
     $(document).on("click", ".add-btn", function () {
         //Grab product ID and quantity from the modal (which displays selected product)
         var productID = parseInt($(".modal-img").attr("smoothie-ID"));
-        var amount    = parseInt($("#quantity").val());
+        var amount = parseInt($("#quantity").val());
 
         //Retrieve info from shopify...
-        shopClient.fetchProduct(productID).then( product => {
+        shopClient.fetchProduct(productID).then(product => {
             //Then add product to cart
             cart.createLineItemsFromVariants({
                 variant: product.selectedVariant,
@@ -71,7 +73,7 @@ $(document).ready(function () {
     $(document).on("click", ".plan-btn", function () {
         //update user's subscription
         planName = $(this).attr("plan-name");
-        planQty  = parseInt($(this).attr("plan-qty"));
+        planQty = parseInt($(this).attr("plan-qty"));
         planCost = parseFloat($(this).attr("plan-cost"));
 
         //update plan-btn innerHTML
@@ -97,12 +99,25 @@ $(document).ready(function () {
         $("#quantity").val(1);
     });
 
-    //On checkout click...
+    //On cart-btn click...
     $(document).on("click", ".checkout-btn", function () {
         console.log(this);
         //If user meets plan qty and plan != 0...
         //generate checkout URL (new href)
         //user can click checkout btn
+        //Clear previous items
+        /*Iterate through cart
+        for (var c = 0; c < cart.attrs.line_items.length; c++) {
+            //Get image src, title, quantity from items in cart
+            var cartItemImg   = $("<img>").attr("src", cart.attrs.line_items[c].image.src);
+            var cartItemTitle = $("<p>").html(cart.attrs.line_items[c].title);
+            var cartItemQty   = $("<p>").html(cart.attrs.line_items[c].quantity);
+            //Append to new div that contains img, title, qty info
+            var cartItem = $("<div>").append(cartItemImg, cartItemTitle, cartItemQty);
+            //Append to correct location
+            //..
+        }*/
+
     });
 
 });
