@@ -11,8 +11,8 @@ var shopClient = ShopifyBuy.buildClient({
 //When document is ready...
 $(document).ready(function () {
 
-    //Store user's plan and planCost
-    var plan = 0, planCost = 0;
+    //Store user's plan name, plan quantity, and plan cost
+    var planName = "", planQty = 0, planCost = 0;
 
     //Create a cart
     var cart;
@@ -49,7 +49,7 @@ $(document).ready(function () {
         }
     });
     
-    //On add click...
+    //On add-btn click...
     $(document).on("click", ".add-btn", function () {
         //Grab product ID and quantity from the modal (which displays selected product)
         var productID = parseInt($(".modal-img").attr("smoothie-ID"));
@@ -70,10 +70,14 @@ $(document).ready(function () {
     //On subscription click...
     $(document).on("click", ".plan-btn", function () {
         //update user's subscription
-        plan = $(this).attr("data-value");
-        planCost = $(this).attr("plan-cost");
+        planName = $(this).attr("plan-name");
+        planQty  = parseInt($(this).attr("plan-qty"));
+        planCost = parseFloat($(this).attr("plan-cost"));
+
         //update plan-btn innerHTML
-        //...
+        $(".plan-1").html($(".plan-1").attr("plan-name"));
+        $(".plan-2").html($(".plan-2").attr("plan-name"));
+        this.innerHTML = $(this).attr("plan-name") + ' \u2714';
     });
 
     //On smoothie click update the modal content
@@ -95,8 +99,8 @@ $(document).ready(function () {
     $(document).on("click", ".checkout-btn", function () {
         console.log(this);
         //If user meets plan qty and plan != 0...
+        //generate checkout URL (new href)
         //user can click checkout btn
-        //generate checkout URL
     });
 
 });
