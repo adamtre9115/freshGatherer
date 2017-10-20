@@ -93,6 +93,8 @@ $(document).ready(function () {
         $(".modal-title").html($(this).attr("smoothie-title"));
         //Details
         $(".modal-details").html($(this).attr("smoothie-details"));
+        //Reset dropdown value to default (1)
+        $("#quantity").val(1);
     });
 
     //On checkout click...
