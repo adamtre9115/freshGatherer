@@ -56,26 +56,18 @@ $(document).ready(function () {
             console.log(newCart.attrs);
             // do something with updated cart
             //$("#total").text(newCart.subtotal);
-        });
 
-        //On subscription click...
-        $(document).on("click", ".plan-btn", function () {
-            //update user's subscription
-            plan = $(this).attr("data-value");
-            planCost = $(this).attr("plan-cost");
-            //update plan-btn innerHTML
-            //...
-        });
-
-        //On add click...
-        $(document).on("click", ".add-btn", function () {
-            //If the item is in stock...(true)
-            if ($(".modal-img").attr("in-stock")) {
+           }); 
+           
+           //On add click...
+            $(document).on("click", ".add-btn", function () {
+                //If the item is in stock...(true)
+                //if ($(".modal-img").attr("in-stock") === "true") {
                 //get product ID
-                var productID = $(".modal-img").attr("smoothie-ID");
+                var productID = parseInt($(".modal-img").attr("smoothie-ID"));
                 console.log(productID);
                 //get variant ID
-                var variantID = $(".modal-img").attr("variant-ID")
+                var variantID = parseInt($(".modal-img").attr("variant-ID"));
                 console.log(variantID);
                 //get product quantity
                 selectedQuantity = parseInt($("#quantity").val());
@@ -90,10 +82,19 @@ $(document).ready(function () {
                     console.log(newCart);
                     console.log(planCost);
                 });
-            } else {
-                console.log("Item is not in stock.");
-            }
+                
+            })
+
+        //On subscription click...
+        $(document).on("click", ".plan-btn", function () {
+            //update user's subscription
+            plan = $(this).attr("data-value");
+            planCost = $(this).attr("plan-cost");
+            //update plan-btn innerHTML
+            //...
         });
+
+        ;
         
         //On smoothie click...
         $(document).on("click", ".smoothie", function () {
@@ -101,7 +102,6 @@ $(document).ready(function () {
             //Image, product/variant ID, availability
             $(".modal-img").attr({
                 "src": $(this).attr("src"),
-                "class": "img-fluid",
                 "smoothie-ID": $(this).attr("smoothie-ID"),
                 "variant-ID": $(this).attr("variant-ID"),
                 "in-stock": $(this).attr("in-stock")
