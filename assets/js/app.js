@@ -119,11 +119,10 @@ $(document).ready(function () {
             //Append to correct location
             $(".cart-body").append(cartItemRow);
 
-            /*Calculate subtotal (price * quantity, retrieved from server)
-            subtotal += (parseFloat(cart.attrs.line_items[c].price) * cart.attrs.line_items[c].quantity);*/
+            /*If there's no subscription plan business model, calculate subtotal (price * quantity, retrieved from server)
+                subtotal += (parseFloat(cart.attrs.line_items[c].price) * cart.attrs.line_items[c].quantity);*/
         }
-        console.log(planCost);
-        //Update subtotal
+        //Update subtotal (subscription cost)
         $(".subtotal").html("Subtotal: $" + planCost.toFixed(2));
     });
 
