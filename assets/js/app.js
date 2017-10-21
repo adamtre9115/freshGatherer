@@ -12,7 +12,9 @@ var shopClient = ShopifyBuy.buildClient({
 $(document).ready(function () {
 
     //Store user's subtotal (prices retrieved from server)
-    var subtotal = 0;
+    var planName = 0,
+        planCost = 0,
+        planQty = 0;
 
     //Create a cart
     var cart;
@@ -68,7 +70,7 @@ $(document).ready(function () {
         });
     });
 
-    /*On subscription click...
+    //On subscription click...
     $(document).on("click", ".plan-btn", function () {
         //update user's subscription
         planName = $(this).attr("plan-name");
@@ -79,7 +81,7 @@ $(document).ready(function () {
         $(".plan-1").html($(".plan-1").attr("plan-name"));
         $(".plan-2").html($(".plan-2").attr("plan-name"));
         this.innerHTML = $(this).attr("plan-name") + ' \u2714';
-    });*/
+    });
 
     //On smoothie click update the modal content
     $(document).on("click", ".smoothie", function () {
@@ -118,11 +120,12 @@ $(document).ready(function () {
             //Append to correct location
             $(".cart-body").append(cartItemRow);
 
-            //Calculate subtotal (price * quantity, retrieved from server)
-            subtotal += (parseFloat(cart.attrs.line_items[c].price) * cart.attrs.line_items[c].quantity);
+            /*Calculate subtotal (price * quantity, retrieved from server)
+            subtotal += (parseFloat(cart.attrs.line_items[c].price) * cart.attrs.line_items[c].quantity);*/
         }
+        console.log(planCost);
         //Update subtotal
-        $(".subtotal").html("Subtotal: $" + subtotal.toFixed(2));
+        $(".subtotal").html("Subtotal: $" + planCost.toFixed(2));
     });
 
 });
