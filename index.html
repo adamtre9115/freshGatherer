@@ -30,15 +30,11 @@
                 <h2>SMOOTHIES</h2>
             </button>
             <button class="button" type="button" onclick="smoothScroll(document.getElementById('team'))">
-                <h2>OUR TEAM</h2>
-            </button>
-            <button class="button" type="button" onclick="smoothScroll(document.getElementById('contact'))">
                 <h2>CONTACT US</h2>
             </button>
-            <!--Cart-->
-            <a href="cart.html">
-                <button type="button" class="button"><h2>CART</h2></button>
-            </a> 
+            <button type="button" class="button cart-btn" data-toggle="cart" data-target="#cart-modal">
+                <h2>CART</h2>
+            </button>
         </div>
     </nav>
     <!--Header Smoothie Photo-->
@@ -139,6 +135,40 @@
         </div>
     </div>
     <!--END smoothie modal==================================-->
+
+    <!--BEGIN cart modal==================================-->
+    </div>
+    <div class="modal fade bd-example-modal-lg" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myCartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="container">
+                    <div id="modalbox">
+                        <div class="row">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Product</th>
+                                        <th>Quantity</th>  
+                                    </tr>
+                                </thead>
+                                <tbody class="cart-body">
+                                    <!--Append cart items here-->
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--Modal footer for checkout-->
+                        <div class="modal-footer">
+                            <a class = "checkout-link" href="#">
+                                <button type="button" class="btn btn-success checkout-btn">Checkout</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--END cart modal==================================-->
 
     <!--About our Team-->
     <div class="text-center" id="team">

@@ -103,32 +103,33 @@ $(document).ready(function () {
     });
 
     //On cart-btn click...
-    $(document).on("click", ".checkout-btn", function () {
-        console.log(this);
-        //If user meets plan qty and plan != 0...
-        if (cart.attrs.line_items.length === planQty){
+    $(document).on("click", ".cart-btn", function () {
+        console.log(planQty);
+        console.log(cart.attrs.line_items.length);
+        //if (cart.attrs.line_items.length === planQty){
             //generate checkout URL (new href)
-            //$(".checkout-btn").attr("href", cart.checkoutUrl);
+            $(".checkout-link").attr("href", cart.checkoutUrl);
             //user can click checkout btn
             //Clear previous items
-            /*Iterate through cart
+            //Iterate through cart
             for (var c = 0; c < cart.attrs.line_items.length; c++) {
                 //Get image src, title, quantity from items in cart
-                var cartItemImg   = $("<td>").append($(<img>).attr("src", cart.attrs.line_items[c].image.src));
+                var cartItemImg   = $("<td>").append($("<img>").attr("src", cart.attrs.line_items[c].image.src));
                 var cartItemTitle = $("<td>").html(cart.attrs.line_items[c].title);
                 var cartItemQty   = $("<td>").html(cart.attrs.line_items[c].quantity);
                 //Append to new div that contains img, title, qty info
                 var cartItemRow = $("<tr>").append(cartItemImg, cartItemTitle, cartItemQty);
                 //Append to correct location
-                //..
-            }*/
-        }
+                $(".cart-body").append(cartItemRow);
+            }
+        //}
+        /*
         else if (planQty === 0) {
-            alert("Please choose a subscription plan");
+            console.log("Please choose a subscription plan");
         }
         else {
             alert("Quantity in cart: " + cart.attrs.line_items.length + "   Subscription quantity: " + planQty);
-        }
+        }*/
     });
 
 });
