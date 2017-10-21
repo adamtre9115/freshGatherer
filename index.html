@@ -32,13 +32,10 @@
                 <h2>SMOOTHIES</h2>
             </button>
             <button class="button" type="button" onclick="smoothScroll(document.getElementById('team'))">
-                <h2>OUR TEAM</h2>
-            </button>
-            <button class="button" type="button" onclick="smoothScroll(document.getElementById('contact'))">
                 <h2>CONTACT US</h2>
             </button>
-            <button type="button" class="btn btn-outline-secondary">
-                <a href="cart.html">Shopping Cart</a>
+            <button type="button" class="button cart-btn" data-toggle="modal" data-target="#cart-modal">
+                <h2>CART</h2>
             </button>
         </div>
     </nav>
@@ -97,7 +94,7 @@
                     <h5>
                         <i>Baby Seedling</i>
                     </h5>
-                    <img src="assets/images/plan1.png" class="straw">
+                    <img src="assets/images/plan1.png" class="img-fluid straw">
                     <h6>
                         <strong>10 Smoothie Blends</strong>
                     </h6>
@@ -108,7 +105,7 @@
                     <h5>
                         <i>Fender Blender</i>
                     </h5>
-                    <img src="assets/images/plan2.png" class="straw">
+                    <img src="assets/images/plan2.png" class="img-fluid straw">
                     <h6>
                         <strong>20 Smoothie Blends</strong>
                     </h6>
@@ -119,7 +116,7 @@
                     <h5>
                         <i>Smooth Operator</i>
                     </h5>
-                    <img src="assets/images/plan3.png" class="straw">
+                    <img src="assets/images/plan3.png" class="img-fluid straw">
                     <h6>
                         <strong>30 Smoothie Blends</strong>
                     </h6>
@@ -143,7 +140,8 @@
     </section>
     <!--BEGIN smoothie modal==================================-->
     </div>
-    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal fade bd-example-modal-lg" id="product-view" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="container">
@@ -184,6 +182,145 @@
         </div>
     </div>
     <!--END smoothie modal==================================-->
+
+    <!--BEGIN cart modal==================================-->
+    </div>
+    <div class="modal fade bd-example-modal-lg" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myCartModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="container">
+                    <div id="modalbox">
+                        <div class="row">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Product Title</th>
+                                        <th>Product ID</th>
+                                        <th>Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="cart-body">
+                                    <!--Append cart items here-->
+                                </tbody>
+                                <tfoot>
+
+                                </tfoot>
+                            </table>
+                        </div>
+                        <!-- form start -->
+                        <form>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="firstName">Fist Name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="inputAddress">Full Address</label>
+                              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St Somewhere, NC">
+                            </div>
+                            <!-- <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputCity">City</label>
+                                <input type="text" class="form-control" id="inputCity">
+                              </div>
+                              <div class="form-group col-md-4">
+                                <label for="inputState">State</label>
+                                <select id="inputState" class="form-control">
+                                  <option selected>Choose...</option>
+                                  <option value="AL">Alabama</option>
+                                  <option value="AK">Alaska</option>
+                                  <option value="AZ">Arizona</option>
+                                  <option value="AR">Arkansas</option>
+                                  <option value="CA">California</option>
+                                  <option value="CO">Colorado</option>
+                                  <option value="CT">Connecticut</option>
+                                  <option value="DE">Delaware</option>
+                                  <option value="DC">District Of Columbia</option>
+                                  <option value="FL">Florida</option>
+                                  <option value="GA">Georgia</option>
+                                  <option value="HI">Hawaii</option>
+                                  <option value="ID">Idaho</option>
+                                  <option value="IL">Illinois</option>
+                                  <option value="IN">Indiana</option>
+                                  <option value="IA">Iowa</option>
+                                  <option value="KS">Kansas</option>
+                                  <option value="KY">Kentucky</option>
+                                  <option value="LA">Louisiana</option>
+                                  <option value="ME">Maine</option>
+                                  <option value="MD">Maryland</option>
+                                  <option value="MA">Massachusetts</option>
+                                  <option value="MI">Michigan</option>
+                                  <option value="MN">Minnesota</option>
+                                  <option value="MS">Mississippi</option>
+                                  <option value="MO">Missouri</option>
+                                  <option value="MT">Montana</option>
+                                  <option value="NE">Nebraska</option>
+                                  <option value="NV">Nevada</option>
+                                  <option value="NH">New Hampshire</option>
+                                  <option value="NJ">New Jersey</option>
+                                  <option value="NM">New Mexico</option>
+                                  <option value="NY">New York</option>
+                                  <option value="NC">North Carolina</option>
+                                  <option value="ND">North Dakota</option>
+                                  <option value="OH">Ohio</option>
+                                  <option value="OK">Oklahoma</option>
+                                  <option value="OR">Oregon</option>
+                                  <option value="PA">Pennsylvania</option>
+                                  <option value="RI">Rhode Island</option>
+                                  <option value="SC">South Carolina</option>
+                                  <option value="SD">South Dakota</option>
+                                  <option value="TN">Tennessee</option>
+                                  <option value="TX">Texas</option>
+                                  <option value="UT">Utah</option>
+                                  <option value="VT">Vermont</option>
+                                  <option value="VA">Virginia</option>
+                                  <option value="WA">Washington</option>
+                                  <option value="WV">West Virginia</option>
+                                  <option value="WI">Wisconsin</option>
+                                  <option value="WY">Wyoming</option>
+                                </select>
+                              </div>
+                              <div class="form-group col-md-2">
+                                <label for="inputZip">Zip</label>
+                                <input type="text" class="form-control" id="inputZip">
+                              </div>
+                            </div> -->
+                            <!-- <button type="submit" class="btn btn-primary">Send Info</button> -->
+                            <small>By submitting your information, you are submitting information for delivery, you will be shown a map of expected delivery time. This does not confirm your order, therefore please checkout to place your order.</small>
+                          </form>
+                          <hr>
+                          <div id="showMap" class="container hide">
+                              <div class="row">
+                                  <div id="map" class="col-md-6">
+                                      <!-- map will apper here -->
+                                  </div>
+                                  <div id="output" class="col-md-6"></div>
+                              </div>
+                          </div>
+
+                        <!-- form end -->
+                        <!--Modal footer for checkout-->
+                        <div class="modal-footer">
+                            <h6 class="subtotal">Subtotal: </h6>
+                            <button type="submit" id="mapBtn" class="btn btn-primary map-btn">Map</button>
+                            <a class="checkout-link" href="#">
+                                <button type="button" class="btn btn-success checkout-btn">Checkout</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--END cart modal==================================-->
+
     <!--About our Team-->
     <div class="text-center" id="team">
         <h4>OUR TEAM</h4>
@@ -231,6 +368,11 @@
     <!--JavaScript Buy SDK (Shopify)-->
     <script src="http://sdks.shopifycdn.com/js-buy-sdk/v0/latest/shopify-buy.umd.polyfilled.min.js"></script>
     <script src="assets/js/experience.js"></script>
+    <!-- google distance matrix  -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlOd3hYpDLPAdKLwjmQV9lJTiGVtiewcc&callback=initMap">
+    </script>
+    <script src="assets/js/maps.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
 

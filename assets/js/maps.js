@@ -1,11 +1,13 @@
 var newAddress;
 
-$("#submit").on("click", function () {
+$("#mapBtn").on("click", function () {
     event.preventDefault();
-    newAddress = $("#new").val();
+    newAddress = $("#inputAddress").val();
     console.log(newAddress);
-    $("#new").val("");
-    $("#map").removeClass("hide");
+    $("#inputAddress").val("");
+    $("#firstName").val("");
+    $("#lastName").val("");
+    $("#showMap").removeClass("hide");
     initMap();
 })
 // end click
@@ -92,11 +94,11 @@ function initMap() {
 
             // display it to the page
             if (miles <= 10) {
-                $("#output").html("Great news! You can expect your delivery today if you place your order before 12PM.");
+                $("#output").html("Great news! You can expect your delivery today if you place your order before 12PM. If not, it can arrive tomorrow! Stay Fresh with a smoothie.");
             }else if (miles > 10 && miles <= 25) {
-                $("#output").html("Thanks for your order! You can expect your delivery within 1-2 business days.");
+                $("#output").html("Ready to place your order? You can expect your delivery within 1-2 business days. Stay Fresh with a smoothie.");
             }else {
-                $("#output").html("Thanks for your order! You can expect your delivery within 3-5 business days");
+                $("#output").html("Ready to place your order? You can expect your delivery within 3-5 business days Stay Fresh with a smoothie.");
             }
         }
     });
