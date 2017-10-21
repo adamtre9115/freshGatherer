@@ -59,13 +59,16 @@ $(document).ready(function () {
 
         //Retrieve info from shopify...
         shopClient.fetchProduct(productID).then(product => {
-            //Then add product to cart
-            cart.createLineItemsFromVariants({
-                variant: product.selectedVariant,
-                quantity: amount
-            }).then(cart => {
-                console.log(cart);
-            });
+            //Check if available
+            if (product.attrs.available) {
+                //Then add product/quantity to cart
+                cart.createLineItemsFromVariants({
+                    variant: product.selectedVariant,
+                    quantity: amount
+                }).then(cart => {
+                    console.log(cart);
+                });
+            }
         });
     });
 
@@ -103,21 +106,29 @@ $(document).ready(function () {
     $(document).on("click", ".checkout-btn", function () {
         console.log(this);
         //If user meets plan qty and plan != 0...
-        //generate checkout URL (new href)
-        //user can click checkout btn
-        //Clear previous items
-        /*Iterate through cart
-        for (var c = 0; c < cart.attrs.line_items.length; c++) {
-            //Get image src, title, quantity from items in cart
-            var cartItemImg   = $("<img>").attr("src", cart.attrs.line_items[c].image.src);
-            var cartItemTitle = $("<p>").html(cart.attrs.line_items[c].title);
-            var cartItemQty   = $("<p>").html(cart.attrs.line_items[c].quantity);
-            //Append to new div that contains img, title, qty info
-            var cartItem = $("<div>").append(cartItemImg, cartItemTitle, cartItemQty);
-            //Append to correct location
-            //..
-        }*/
-
+        if (cart.attrs.line_items.length === planQty){
+            //generate checkout URL (new href)
+            //$(".checkout-btn").attr("href", cart.checkoutUrl);
+            //user can click checkout btn
+            //Clear previous items
+            /*Iterate through cart
+            for (var c = 0; c < cart.attrs.line_items.length; c++) {
+                //Get image src, title, quantity from items in cart
+                var cartItemImg   = $("<td>").append($(<img>).attr("src", cart.attrs.line_items[c].image.src));
+                var cartItemTitle = $("<td>").html(cart.attrs.line_items[c].title);
+                var cartItemQty   = $("<td>").html(cart.attrs.line_items[c].quantity);
+                //Append to new div that contains img, title, qty info
+                var cartItemRow = $("<tr>").append(cartItemImg, cartItemTitle, cartItemQty);
+                //Append to correct location
+                //..
+            }*/
+        }
+        else if (planQty === 0) {
+            alert("Please choose a subscription plan");
+        }
+        else {
+            alert("Quantity in cart: " + cart.attrs.line_items.length + "   Subscription quantity: " + planQty);
+        }
     });
 
 });
