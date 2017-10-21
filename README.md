@@ -1,6 +1,6 @@
 # freshGatherer
 
-Allie Jaccard, Tresean Adams, Keivon Arooji, Miguel Acevedo
+Allie Jaccard, Tresean Adam, Keivon Arooji, Miguel Acevedo
 
 Fresh Gatherer is an organic smoothie delivery company in Charlotte, North Carolina. We delivery pre-blended, frozen organic smoothie blends to maximize nutritional value!
 
