@@ -25,6 +25,12 @@ h3 {
     color: white;
 }
 
+#main,
+#secondary,
+#tertiary,
+#fourth {
+    background-color: #fff;
+}
 .button {
     font-size: 24px;
     text-align: center;
@@ -188,10 +194,6 @@ button:hover {
     margin: 10px;
 }
 
-#modalbox {
-    margin: 50px;
-}
-
 .checkout {
     width: 200px;
     height: 200px;
@@ -218,7 +220,6 @@ footer {
     bottom: 0;
     left: 0;
     padding: 1rem;
-    background-color: white;
     text-align: center;
     color: white;
     font-size: 60px;
@@ -273,7 +274,14 @@ footer {
     z-index: 999999;
 }
 
+.hide {
+    display: none;
+}
 
+#map {
+    height: 200px;
+    width: 30%;
+  }
 /* Style inputs with type="text", select elements and textareas */
 
 input[type=text],

@@ -77,9 +77,8 @@ $(document).ready(function () {
         planQty = parseInt($(this).attr("plan-qty"));
         planCost = parseFloat($(this).attr("plan-cost"));
 
-        //update plan-btn innerHTML
-        $(".plan-1").html($(".plan-1").attr("plan-name"));
-        $(".plan-2").html($(".plan-2").attr("plan-name"));
+        //Update plan-btn innerHTML
+        $(".plan-btn").html("BLEND ME!");
         this.innerHTML = $(this).attr("plan-name") + ' \u2714';
     });
 
