@@ -1,4 +1,5 @@
 //JavaScript Buy SDK
+// displays images to index
 var shopClient = ShopifyBuy.buildClient({
     //Buy Button Access Token
     accessToken: '373f1694d25bedc5a69debe2ca8ed4a2',

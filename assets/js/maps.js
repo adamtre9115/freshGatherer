@@ -1,3 +1,4 @@
+// displays map on modal
 var newAddress;
 
 $("#mapBtn").on("click", function () {
