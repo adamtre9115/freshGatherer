@@ -3,11 +3,13 @@
 
 <head>
     <title>Fresh Gatherer</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="shortcut icon" href="assets/images/favicon.ico" />
     <!-- bootstrap 4 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -35,63 +37,110 @@
             <button class="button" type="button" onclick="smoothScroll(document.getElementById('contact'))">
                 <h2>CONTACT US</h2>
             </button>
+            <button type="button" class="btn btn-outline-secondary">
+                <a href="cart.html">Shopping Cart</a>
+            </button>
         </div>
     </nav>
     <!--Header Smoothie Photo-->
-    <div class="bg">
-        <img src="assets/images/smoothie.jpg">
-    </div>
+    <section>
+        <div id="main" class="container">
+            <div class="row">
+                <img src="assets/images/smoothie.jpg">
+            </div>
+        </div>
+    </section>
+
     <!--How to Smoothie Section with Icons -->
-    <div class="text-center" id='howtosmoothie'>
-        <div class="howtosmoothie">Choose Your Blends
-            <img src="assets/images/website.png" class="howto">
+    <!-- <div class="text-center" id='howtosmoothie'>
+        <div class="col-xs-4 col-md-4 howtosmoothie">Choose Your Blends <img src="assets/images/website.png" class="howto">
             <p>Choose any combination of delicious superfood eats, developed by a nutritionist and made craveable by a chef.</p>
         </div>
-        <div class="howtosmoothie">Check Your Doorstep
-            <img src="assets/images/truck.png" class="howto">
+        <div class="col-xs-4 col-md-4 howtosmoothie">Check Your Doorstep <img src="assets/images/truck.png" class="howto">
             <p>Your pre-portioned cups will arrive ready to pop in your freezer + blend, soak or heat on your schedule</p>
         </div>
-        <div class="howtosmoothie">Blend Ingredients
-            <img src="assets/images/straw.png" class="howto">
+        <div class="col-xs-4 col-md-4 howtosmoothie">Blend Ingredients<img src="assets/images/straw.png" class="howto">
             <p>Simply add a liquid base to your cup and blend, soak or heat. No prep, no mess.</p>
-        </div>
-        <!--Choose Your Plan-->
-        <div class="text-center" id="plan">
-            <h4>CHOOSE YOUR PLAN</h4>
-            <div class="plan">
-                <h5>
-                    <i>WEEKLY</i>
-                </h5>
-                <img src="assets/images/plan23.png" class="straw">
-                <h6>
-                    <strong>7 Smoothie Blends</strong>
-                </h6>
-                <h6>$7.50 per smoothie | $52.50 per box</h6>
-                <button type="button" id="buy" class="btn btn-outline-success plan-btn plan-1" plan-name = "Weekly Plan" plan-qty= 7 plan-cost = 52.50>Weekly Plan</button>
-            </div>
-            <div class="plan">
-                <h5>
-                    <i>MONTHLY</i>
-                </h5>
-                <img src="assets/images/plan23.png" class="straw">
-                <h6>
-                    <strong>24 Smoothie Blends</strong>
-                </h6>
-                <h6>$6.50 per smoothie | $156.00 per box</h6>
-                <button type="button" id="buy" class="btn btn-outline-success plan-btn plan-2" plan-name = "Monthly Plan" plan-qty= 24 plan-cost = 156.00>Monthly Plan</button>
-            </div>
-        </div>
-        <!--Smoothies-->
-        <section id="smoothie">
-            <h4>SMOOTHIES</h4>
-            <div class="container">
-                <div id="shopifyImg" class="row">
-                </div>
-                <!-- end row -->
-            </div>
-            <!-- end container -->
-        </section>
+        </div> -->
 
+    <section id="howtosmoothie" class="text-center">
+        <div id="secondary" class="container">
+            <h4>How to Smoothie</h4>
+            <div class="row">
+                <div class="col-md-4">
+                    Choose Your Blends
+                    <img src="assets/images/website.png" class="howto">
+                    <p>Choose any combination of delicious superfood eats, developed by a nutritionist and made craveable by
+                        a chef.</p>
+                </div>
+                <div class="col-md-4">
+                    Check Your Doorstep
+                    <img src="assets/images/truck.png" class="howto">
+                    <p>Your pre-portioned cups will arrive ready to pop in your freezer + blend, soak or heat on your schedule</p>
+                </div>
+                <div class="col-md-4">
+                    Blend Ingredients
+                    <img src="assets/images/straw.png" class="howto">
+                    <p>Simply add a liquid base to your cup and blend, soak or heat. No prep, no mess.</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!--Choose Your Plan-->
+
+    <div class="row text-center" id="plan">
+        <div id="tertiary" class="container">
+            <h4>CHOOSE YOUR PLAN</h4>
+            <div class="row">
+                <div class="col-xs-4 col-md-4">
+                    <h5>
+                        <i>Baby Seedling</i>
+                    </h5>
+                    <img src="assets/images/plan1.png" class="straw">
+                    <h6>
+                        <strong>10 Smoothie Blends</strong>
+                    </h6>
+                    <h6>$7.50 per smoothie | $75.00 per box</h6>
+                    <button type="button" id="buy" class="btn btn-outline-success plan-btn" data-value=1 0>BLEND ME!</button>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    <h5>
+                        <i>Fender Blender</i>
+                    </h5>
+                    <img src="assets/images/plan2.png" class="straw">
+                    <h6>
+                        <strong>20 Smoothie Blends</strong>
+                    </h6>
+                    <h6>$7.00 per smoothie | $140.00 per box</h6>
+                    <button type="button" id="buy" class="btn btn-outline-success plan-btn" data-value=2 0>BLEND ME!</button>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    <h5>
+                        <i>Smooth Operator</i>
+                    </h5>
+                    <img src="assets/images/plan3.png" class="straw">
+                    <h6>
+                        <strong>30 Smoothie Blends</strong>
+                    </h6>
+                    <h6>$6.50 per smoothie | $195.00 per box</h6>
+                    <button type="button" id="buy" class="btn btn-outline-success plan-btn" data-value=3 0>BLEND ME!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Smoothies-->
+
+    <section id="smoothie">
+        <h4>SMOOTHIES</h4>
+        <div id="fourth" class="container text-center">
+            <div id="shopifyImg" class="row">
+
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
     <!--BEGIN smoothie modal==================================-->
     </div>
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -127,7 +176,7 @@
                                     <option>10</option>
                                 </select>
                             </div>
-                            <button type="button" class="btn btn-outline-success add-btn" data-toggle="modal" data-target=".bd-example-modal-lg">Add</button>
+                            <button type="button" class="btn btn-outline-success add-btn">Add</button>
                         </div>
                     </div>
                 </div>
@@ -135,7 +184,6 @@
         </div>
     </div>
     <!--END smoothie modal==================================-->
-
     <!--About our Team-->
     <div class="text-center" id="team">
         <h4>OUR TEAM</h4>
@@ -147,19 +195,6 @@
     <!--Contact Us -->
     <div class=text-center id="contact">
         <h4>CONTACT US</h4>
-    </div>
-    <div class="container">
-        <form action="/action_page.php">
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="Your name..">
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-            <label for="email">Email Address</label>
-            <input type="text" id="email" name="email" placeholder="Your email address..">
-            <label for="subject">Subject</label>
-            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-            <input type="submit" value="Submit">
-        </form>
     </div>
     <!-- back to top  -->
     <div id="backtop" data-v-w="300, 800"> &#9650;</div>
@@ -180,16 +215,21 @@
         <a href="https://www.linkedin.com/in/alliejaccard/" target="_blank">
             <img src="assets/images/linkedin.png" class="social">
         </a>
+        <hr>
+        <p>&copy;2017 Fresh Gatherer</p>
     </footer>
+
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
     <!--jQuery Ajax Library
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
     <!--JavaScript Buy SDK (Shopify)-->
     <script src="http://sdks.shopifycdn.com/js-buy-sdk/v0/latest/shopify-buy.umd.polyfilled.min.js"></script>
-    <!-- <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script> -->
     <script src="assets/js/experience.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
