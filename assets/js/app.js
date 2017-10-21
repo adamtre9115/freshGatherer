@@ -1,5 +1,4 @@
 //JavaScript Buy SDK
-//Ready up the shop
 var shopClient = ShopifyBuy.buildClient({
     //Buy Button Access Token
     accessToken: '373f1694d25bedc5a69debe2ca8ed4a2',
@@ -7,76 +6,124 @@ var shopClient = ShopifyBuy.buildClient({
     domain: 'fresh-gatherer.myshopify.com',
     //General Buy button ID
     appId: '6'
-  });
-  console.log(shopClient);
-
-//Create a cart
-var newCart;
-shopClient.createCart().then(function (newCart) {
-//   cart = newCart;
-  console.log(newCart.attrs);
-  // do something with updated cart
-  $("#total").text(newCart.subtotal);
 });
 
-//Retrieve all products (test)
-shopClient.fetchAllProducts().then(products => {
-    console.log(products);
-    //Append all products to html element
-    for (var i = 0; i < products.length; i++) {
+//When document is ready...
+$(document).ready(function () {
 
-        //Create a new div to hold the product
-        var newSmoothie = $("<div>");
+    //Store user's subtotal (prices retrieved from server)
+    var planName = 0,
+        planCost = 0,
+        planQty = 0;
 
-        // Create a new dive to hold smoothie description
-        var smoothieInfo = $("<div>");
+    //Create a cart
+    var cart;
+    shopClient.createCart().then(newCart => {
+        cart = newCart;
+    });
 
-        // Create a button to show smoothie description
-        var smoothieButton = $("<button>").text("See More");
+    //Retrieve all products available on the Shopify store
+    shopClient.fetchAllProducts().then(products => {
 
-        // add description to smoothie div
-        smoothieInfo.html(products[i].attrs.body_html);
+        //Append all products to HTML element
+        for (var x = 0; x < products.length; x++) {
 
-        smoothieInfo.addClass("reveal");
-        //Create a new image element with specified dimensions
+            //New image element with smoothie class, image src, modal attributes, and product information
+            var newSmoothie = $("<img>").addClass("smoothie img-fluid").attr({
+                "src": products[x].attrs.images[0].src,
+                "data-toggle": "modal",
+                "data-target": "#product-view",
+                "smoothie-ID": products[x].attrs.product_id,
+                "variant-ID": products[x].attrs.variants[0].id,
+                "in-stock": products[x].attrs.variants[0].available,
+                "smoothie-title": products[x].attrs.title,
+                "smoothie-details": products[x].attrs.body_html
+            });
 
-        var newImage = $("<img width = '350' height = '350'>");
+            //h6 for the smoothie title
+            var smoothieTitle = $("<h6>").html(products[x].attrs.title);
 
-        //Add necessary classes
-        newImage.addClass("smoothie");
+            //Append newSmoothie to a div that contains the entire product
+            var newDiv = $("<div class = 'col-md-3'>").append(newSmoothie, smoothieTitle);
 
-        //Set image source to currently iterated product
-        newImage.attr("src", products[i].attrs.images[i].src);
+            //Append the newSmoothie div to the section on the HTML file
+            $("#shopifyImg").append(newDiv);
+        }
+    });
 
-        //Append new attributes to the div that holds the product
-        newSmoothie.append(newImage, smoothieButton, smoothieInfo, products[i].attrs.title);
+    //On add-btn click...
+    $(document).on("click", ".add-btn", function () {
+        //Grab product ID and quantity from the modal (which displays selected product)
+        var productID = parseInt($(".modal-img").attr("smoothie-ID"));
+        var amount = parseInt($("#quantity").val());
 
-        //Append the newSmoothie div to the section on the HTML file
-        $("section").append(newSmoothie);
-    }
+        //Retrieve info from shopify...
+        shopClient.fetchProduct(productID).then(product => {
+            //Check if available
+            if (product.attrs.available) {
+                //Then add product/quantity to cart
+                cart.createLineItemsFromVariants({
+                    variant: product.selectedVariant,
+                    quantity: amount
+                })
+            }
+        });
+    });
+
+    //On subscription click...
+    $(document).on("click", ".plan-btn", function () {
+        //update user's subscription
+        planName = $(this).attr("plan-name");
+        planQty = parseInt($(this).attr("plan-qty"));
+        planCost = parseFloat($(this).attr("plan-cost"));
+
+        //Update plan-btn innerHTML
+        $(".plan-btn").html("BLEND ME!");
+        this.innerHTML = $(this).attr("plan-name") + ' \u2714';
+    });
+
+    //On smoothie click update the modal content
+    $(document).on("click", ".smoothie", function () {
+        //Image, product/variant ID, availability
+        $(".modal-img").attr({
+            "src": $(this).attr("src"),
+            "smoothie-ID": $(this).attr("smoothie-ID"),
+            "variant-ID": $(this).attr("variant-ID"),
+            "in-stock": $(this).attr("in-stock")
+        });
+        //Title
+        $(".modal-title").html($(this).attr("smoothie-title"));
+        //Details
+        $(".modal-details").html($(this).attr("smoothie-details"));
+        //Reset dropdown value to default (1)
+        $("#quantity").val(1);
+    });
+
+    //On cart-btn click...
+    $(document).on("click", ".cart-btn", function () {
+        //generate checkout URL (new href)
+        $(".checkout-link").attr("href", cart.checkoutUrl);
+        //Clear previous items
+        $(".cart-body").empty();
+        //Iterate through cart
+        for (var c = 0; c < cart.attrs.line_items.length; c++) {
+            //Get image src, title, quantity from items in cart
+            var cartItemImg = $("<td>").append($("<img class='img-fluid checkout-img'>").attr("src", cart.attrs.line_items[c].image.src));
+            var cartItemTitle = $("<td>").html(cart.attrs.line_items[c].title);
+            var cartItemId = $("<td>").html(cart.attrs.line_items[c].product_id);
+            var cartItemQty = $("<td>").html(cart.attrs.line_items[c].quantity);
+
+            //Append to new div that contains img, title, qty info
+            var cartItemRow = $("<tr>").append(cartItemImg, cartItemTitle, cartItemId, cartItemQty);
+
+            //Append to correct location
+            $(".cart-body").append(cartItemRow);
+
+            /*If there's no subscription plan business model, calculate subtotal (price * quantity, retrieved from server)
+                subtotal += (parseFloat(cart.attrs.line_items[c].price) * cart.attrs.line_items[c].quantity);*/
+        }
+        //Update subtotal (subscription cost)
+        $(".subtotal").html("Subtotal: $" + planCost.toFixed(2));
+    });
+
 });
-
-//Retrieve product based on ID (test)
-shopClient.fetchProduct('176946315293').then(product => {
-    console.log(product);
-});
-
-//If user clicks Add To Cart button
-    /*$(".add-button").on("click", function(){
-        
-    });*/
-
-//Add items to the cart
-    //Get product.selectedVariant, quantity selected (.val() from HTML)
-    /* Example code ...
-        cart.createLineItemsFromVariants({variant: product.selectedVariant, quantity: 1}).then(function (cart) {
-            // do something with updated cart
-        }); 
-    */
-
-//Checkout with updated cart
-    //Use cart.checkoutURL to generate a checkout URL with current cart
-    /*Example Code
-        document.location.href = cart.checkoutUrl;
-        //Implement Shopify Sandbox for card info
-    */

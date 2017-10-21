@@ -4,15 +4,15 @@ h1 {
     font-weight: lighter;
     letter-spacing: 3px;
     color: #526555;
-    margin-left: 120px;
-    margin-right: 35px;
+    margin-left: 140px;
+    margin-right: 5px;
 }
 
 h2 {
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
     color: #526555;
-    margin: 30px;
+    margin: 15px;
     font-weight: lighter;
 }
 
@@ -25,24 +25,29 @@ h3 {
     color: white;
 }
 
+#main,
+#secondary,
+#tertiary,
+#fourth {
+    background-color: #fff;
+}
 .button {
-  font-size: 24px;
-  text-align: center;
-  color: #fff;
-  background-color: #f8f9fa;
-  border: none;
+    font-size: 24px;
+    text-align: center;
+    color: white;
+    background-color: #f8f9fa;
+    border: none;
 }
 
 .button:hover {
-	background-color: #74b657;
-	border-radius: 5px;
-
+    background-color: #74b657;
+    border-radius: 5px;
 }
 
 .button:active {
-  background-color: #74b657;
-  box-shadow: 0 2px #666;
-  transform: translateY(4px);
+    background-color: #74b657;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
 }
 
 h4 {
@@ -52,14 +57,41 @@ h4 {
     letter-spacing: 3px;
     text-align: center;
     color: #526555;
-    margin-bottom: 20px;
     margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h5 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 32px;
+    font-weight: lighter;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #526555;
+    margin-top: 20px;
+}
+
+h6 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #526555;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 10px;
+}
+
+.modal-title {
+    font-size: 32px;
 }
 
 p {
     font-size: 12px;
     margin-top: 10px;
     letter-spacing: 1px;
+    padding: 20px;
 }
 
 img {
@@ -72,22 +104,68 @@ img {
     margin: 0 auto;
 }
 
+.smoothie:hover,
+button:hover {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    height: 200px;
+    overflow: auto;
+}
+
+.dropdown-item:hover {
+    background-color: #74b657;
+}
+
+#buy {
+    border-radius: 3px;
+    background-color: #74b657;
+    border: 5px #74b657 solid;
+    width: 350px;
+    color: white;
+}
+
+#buy:hover {
+    background-color: #6ba850;
+    border: 5px #6ba850 solid;
+}
+
+#buy:active {
+    background-color: #6ba850;
+    border: 5px #6ba850 solid;
+    box-shadow: 0 2px #6ba850;
+    transform: translateY(4px);
+}
+
 .straw {
     margin-top: 10px;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     box-shadow: none;
+}
+
+.howto {
+    margin-top: 10px;
+    width: 150px;
+    height: 150px;
+    box-shadow: none;
+}
+
+.plan {
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 350px;
+    height: 400px;
+    margin: 80px;
+    margin-top: 10px;
 }
 
 .logo {
     width: 100px;
     height: 100px;
-    margin-top: 10px;
-    margin-left: 10px;
-}
-
-.bg {
-    margin-bottom: 70px;
+    margin-top: 5px;
+    margin-left: 30px;
 }
 
 .howtosmoothie {
@@ -102,7 +180,9 @@ img {
     letter-spacing: 3px;
     text-align: center;
     color: #526555;
-    margin: 50px;
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 
 .smoothie {
@@ -114,13 +194,32 @@ img {
     margin: 10px;
 }
 
+.checkout {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+    display: block;
+    margin: 0 auto;
+}
+
+.options {
+    width: 200px;
+    height: 200px;
+    margin-top: 50px;
+}
+
+.reveal {
+    display: none;
+}
+
 footer {
     margin-top: 40px;
     right: 0;
     bottom: 0;
     left: 0;
     padding: 1rem;
-    background-color: white;
     text-align: center;
     color: white;
     font-size: 60px;
@@ -131,16 +230,16 @@ footer {
 }
 
 .team {
-	 width: 200px;
+    width: 200px;
     height: 200px;
-	display: inline-block;
+    display: inline;
+    margin: 20px;
 }
 
 .footer {
     width: 100px;
     height: 100px;
 }
-
 
 .social {
     width: 50px;
@@ -150,4 +249,90 @@ footer {
     margin: 0 auto;
     background-color: #74b657;
     display: inline-block;
+}
+
+#backtop {
+    position: fixed;
+    left: auto;
+    right: 20px;
+    top: auto;
+    bottom: 20px;
+    outline: none;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    opacity: .85;
+    background-color: #526555;
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: all .3s linear;
+    z-index: 999999;
+}
+
+.hide {
+    display: none;
+}
+
+#map {
+    height: 200px;
+    width: 30%;
+  }
+/* Style inputs with type="text", select elements and textareas */
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    /* Full width */
+    padding: 12px;
+    /* Some padding */
+    border: 1px solid #ccc;
+    /* Gray border */
+    border-radius: 4px;
+    /* Rounded borders */
+    box-sizing: border-box;
+    /* Make sure that padding and width stays in place */
+    margin-top: 6px;
+    /* Add a top margin */
+    margin-bottom: 16px;
+    /* Bottom margin */
+    resize: vertical/* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+
+/* Style the submit button with a specific background color etc */
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* When moving the mouse over the submit button, add a darker green color */
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+/* Add a background color and some padding around the form */
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    color: #526555;
+}
+
+.checkout-img {
+    max-width: 120px;
 }

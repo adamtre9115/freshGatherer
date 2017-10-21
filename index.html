@@ -3,95 +3,373 @@
 
 <head>
     <title>Fresh Gatherer</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="FreshGatherer.css">
-    <link rel="shortcut icon" href="favicon.ico" />
-    <script src="FreshGatherer.js"></script>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+    <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <!-- Logo and Header -->
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="index.html">
-    <img src="leaf.png" class="logo" width="100" height="100" class="d-inline-block align-top" alt="">
-</a>
-
-        <div class="nav">
+            <img src="assets/images/leaf.png" class="logo" width="100" height="100" class="d-inline-block align-top" alt="">
+        </a>
+        <div class="text-center" id="nav">
             <h1>FRESH GATHERER</h1>
-            <button class="button" type="button" onclick="smoothScroll(document.getElementById('howtosmoothie'))"><h2>HOW TO SMOOTHIE</h2></button>
-            <button class="button" type="button" onclick="smoothScroll(document.getElementById('smoothie'))"><h2>SMOOTHIES</h2></button>
-            <button class="button" type="button" onclick="smoothScroll(document.getElementById('team'))"><h2>OUR TEAM</h2></button>
-            <button class="button" type="button" onclick="smoothScroll(document.getElementById('contact'))"><h2>CONTACT US</h2></button>
+            <button class="button" type="button" onclick="smoothScroll(document.getElementById('howtosmoothie'))">
+                <h2>HOW TO SMOOTHIE</h2>
+            </button>
+            <button class="button" type="button" onclick="smoothScroll(document.getElementById('plan'))">
+                <h2>CHOOSE YOUR PLAN</h2>
+            </button>
+            <button class="button" type="button" onclick="smoothScroll(document.getElementById('smoothie'))">
+                <h2>SMOOTHIES</h2>
+            </button>
+            <button class="button" type="button" onclick="smoothScroll(document.getElementById('team'))">
+                <h2>OUR TEAM</h2>
+            </button>
+            <button type="button" class="button cart-btn" data-toggle="modal" data-target="#cart-modal">
+                <h2>CART</h2>
+            </button>
         </div>
     </nav>
     <!--Header Smoothie Photo-->
-    <div class="bg">
-        <img src="smoothie.jpg">
-    </div>
-    <!--How to Smoothie Section with Icons -->
-    <div class="text-center" id="howtosmoothie">
-    <div class="howtosmoothie">Choose Your Blends <img src="website.png" class="straw">
-        <p>Choose any combination of delicious superfood eats, developed by a nutritionist and made craveable by a chef.</p>
-    </div>
-    <div class="howtosmoothie">Check Your Doorstep <img src="truck.png" class="straw">
-        <p>Your pre-portioned cups will arrive ready to pop in your freezer + blend, soak or heat on your schedule</p>
-    </div>
-    <div class="howtosmoothie">Blend Ingredients<img src="straw.png" class="straw">
-        <p>Simply add a liquid base to your cup and blend, soak or heat. No prep, no mess.</p>
-    </div>
-
-
-    <!--Smoothies-->
-    <div class="text-center" id="smoothie">
-    <h4>SMOOTHIES</h4>
-
-    <!-- New smoothies appended here-->
     <section>
-        <!--New smoothie!-->
-        <div id="total"></div>
+        <div id="main" class="container">
+            <div class="row">
+                <img src="assets/images/smoothie.jpg">
+            </div>
+        </div>
     </section>
 
+    <!--How to Smoothie Section with Icons -->
+    <!-- <div class="text-center" id='howtosmoothie'>
+        <div class="col-xs-4 col-md-4 howtosmoothie">Choose Your Blends <img src="assets/images/website.png" class="howto">
+            <p>Choose any combination of delicious superfood eats, developed by a nutritionist and made craveable by a chef.</p>
+        </div>
+        <div class="col-xs-4 col-md-4 howtosmoothie">Check Your Doorstep <img src="assets/images/truck.png" class="howto">
+            <p>Your pre-portioned cups will arrive ready to pop in your freezer + blend, soak or heat on your schedule</p>
+        </div>
+        <div class="col-xs-4 col-md-4 howtosmoothie">Blend Ingredients<img src="assets/images/straw.png" class="howto">
+            <p>Simply add a liquid base to your cup and blend, soak or heat. No prep, no mess.</p>
+        </div> -->
 
-	<!--About our Team-->
-	<br>
-	<br>
-	<div class=text-center id="team">
-	<h4>OUR TEAM</h4>
-    <img src="allie.png" class="team"></div>
-    <img src="leaf.png" class="team"></div>
-    <img src="leaf.png" class="team"></div>
-    <img src="leaf.png" class="team"></div>
-</div>
+    <section id="howtosmoothie" class="text-center">
+        <div id="secondary" class="container">
+            <h4>How to Smoothie</h4>
+            <div class="row">
+                <div class="col-md-4">
+                    Choose Your Blends
+                    <img src="assets/images/website.png" class="howto">
+                    <p>Choose any combination of delicious superfood eats, developed by a nutritionist and made craveable by
+                        a chef.</p>
+                </div>
+                <div class="col-md-4">
+                    Check Your Doorstep
+                    <img src="assets/images/truck.png" class="howto">
+                    <p>Your pre-portioned cups will arrive ready to pop in your freezer + blend, soak or heat on your schedule</p>
+                </div>
+                <div class="col-md-4">
+                    Blend Ingredients
+                    <img src="assets/images/straw.png" class="howto">
+                    <p>Simply add a liquid base to your cup and blend, soak or heat. No prep, no mess.</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!--Choose Your Plan-->
 
-<!--Contact Us -->
-<div class=text-center id="contact">
-<h4>CONTACT US</h4>
-</div>
+    <div class="row text-center" id="plan">
+        <div id="tertiary" class="container">
+            <h4>CHOOSE YOUR PLAN</h4>
+            <div class="row">
+                <div class="col-xs-4 col-md-4">
+                    <h5>
+                        <i>Baby Seedling</i>
+                    </h5>
+                    <img src="assets/images/plan1.png" class="img-fluid straw">
+                    <h6>
+                        <strong>10 Smoothie Blends</strong>
+                    </h6>
+                    <h6>$7.50 per smoothie | $75.00 per box</h6>
+                    <button type="button" id="buy" class="btn btn-outline-success plan-btn plan-1" plan-name= "Baby Seedling" plan-cost= 75.00 plan-qty= 10>BLEND ME!</button>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    <h5>
+                        <i>Fender Blender</i>
+                    </h5>
+                    <img src="assets/images/plan2.png" class="img-fluid straw">
+                    <h6>
+                        <strong>20 Smoothie Blends</strong>
+                    </h6>
+                    <h6>$7.00 per smoothie | $140.00 per box</h6>
+                    <button type="button" id="buy" class="btn btn-outline-success plan-btn plan-2" plan-name= "Fender Blender" plan-cost= 140.00 plan-qty= 20>BLEND ME!</button>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    <h5>
+                        <i>Smooth Operator</i>
+                    </h5>
+                    <img src="assets/images/plan3.png" class="img-fluid straw">
+                    <h6>
+                        <strong>30 Smoothie Blends</strong>
+                    </h6>
+                    <h6>$6.50 per smoothie | $195.00 per box</h6>
+                    <button type="button" id="buy" class="btn btn-outline-success plan-btn plan-3" plan-name= "Smooth Operator" plan-cost= 195.00 plan-qty= 30>BLEND ME!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Smoothies-->
 
+    <section id="smoothie">
+        <h4>SMOOTHIES</h4>
+        <div id="fourth" class="container text-center">
+            <div id="shopifyImg" class="row">
+
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+    <!--BEGIN smoothie modal==================================-->
+    </div>
+    <div class="modal fade bd-example-modal-lg" id="product-view" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="container">
+                    <div id="modalbox">
+                        <div class="row">
+                            <!--Smoothie image-->
+                            <div class="col-md-4">
+                                <img src="" class="modal-img img-fluid">
+                            </div>
+                            <!--Smoothie text-->
+                            <div class="col-md-8">
+                                <h6 class="modal-title"></h6>
+                                <p class="modal-details"></p>
+                            </div>
+                        </div>
+                        <!--Modal footer for options-->
+                        <div class="modal-footer">
+                            <div class="form-group">
+                                <label for="quantity">Quantity:</label>
+                                <select class="form-control" id="quantity">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-outline-success add-btn" data-toggle = "modal" data-target = "#product-view">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--END smoothie modal==================================-->
+
+    <!--BEGIN cart modal==================================-->
+    </div>
+    <div class="modal fade bd-example-modal-lg" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myCartModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="container">
+                    <div id="modalbox">
+                        <div class="row">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Product Title</th>
+                                        <th>Product ID</th>
+                                        <th>Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="cart-body">
+                                    <!--Append cart items here-->
+                                </tbody>
+                                <tfoot>
+
+                                </tfoot>
+                            </table>
+                        </div>
+                        <!-- form start -->
+                        <form>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="firstName">Fist Name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="inputAddress">Full Address</label>
+                              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St Somewhere, NC">
+                            </div>
+                            <!-- <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputCity">City</label>
+                                <input type="text" class="form-control" id="inputCity">
+                              </div>
+                              <div class="form-group col-md-4">
+                                <label for="inputState">State</label>
+                                <select id="inputState" class="form-control">
+                                  <option selected>Choose...</option>
+                                  <option value="AL">Alabama</option>
+                                  <option value="AK">Alaska</option>
+                                  <option value="AZ">Arizona</option>
+                                  <option value="AR">Arkansas</option>
+                                  <option value="CA">California</option>
+                                  <option value="CO">Colorado</option>
+                                  <option value="CT">Connecticut</option>
+                                  <option value="DE">Delaware</option>
+                                  <option value="DC">District Of Columbia</option>
+                                  <option value="FL">Florida</option>
+                                  <option value="GA">Georgia</option>
+                                  <option value="HI">Hawaii</option>
+                                  <option value="ID">Idaho</option>
+                                  <option value="IL">Illinois</option>
+                                  <option value="IN">Indiana</option>
+                                  <option value="IA">Iowa</option>
+                                  <option value="KS">Kansas</option>
+                                  <option value="KY">Kentucky</option>
+                                  <option value="LA">Louisiana</option>
+                                  <option value="ME">Maine</option>
+                                  <option value="MD">Maryland</option>
+                                  <option value="MA">Massachusetts</option>
+                                  <option value="MI">Michigan</option>
+                                  <option value="MN">Minnesota</option>
+                                  <option value="MS">Mississippi</option>
+                                  <option value="MO">Missouri</option>
+                                  <option value="MT">Montana</option>
+                                  <option value="NE">Nebraska</option>
+                                  <option value="NV">Nevada</option>
+                                  <option value="NH">New Hampshire</option>
+                                  <option value="NJ">New Jersey</option>
+                                  <option value="NM">New Mexico</option>
+                                  <option value="NY">New York</option>
+                                  <option value="NC">North Carolina</option>
+                                  <option value="ND">North Dakota</option>
+                                  <option value="OH">Ohio</option>
+                                  <option value="OK">Oklahoma</option>
+                                  <option value="OR">Oregon</option>
+                                  <option value="PA">Pennsylvania</option>
+                                  <option value="RI">Rhode Island</option>
+                                  <option value="SC">South Carolina</option>
+                                  <option value="SD">South Dakota</option>
+                                  <option value="TN">Tennessee</option>
+                                  <option value="TX">Texas</option>
+                                  <option value="UT">Utah</option>
+                                  <option value="VT">Vermont</option>
+                                  <option value="VA">Virginia</option>
+                                  <option value="WA">Washington</option>
+                                  <option value="WV">West Virginia</option>
+                                  <option value="WI">Wisconsin</option>
+                                  <option value="WY">Wyoming</option>
+                                </select>
+                              </div>
+                              <div class="form-group col-md-2">
+                                <label for="inputZip">Zip</label>
+                                <input type="text" class="form-control" id="inputZip">
+                              </div>
+                            </div> -->
+                            <!-- <button type="submit" class="btn btn-primary">Send Info</button> -->
+                            <small>By submitting your information, you are submitting information for delivery, you will be shown a map of expected delivery time. This does not confirm your order, therefore please checkout to place your order.</small>
+                          </form>
+                          <hr>
+                          <div id="showMap" class="container hide">
+                              <div class="row">
+                                  <div id="map" class="col-md-6">
+                                      <!-- map will apper here -->
+                                  </div>
+                                  <div id="output" class="col-md-6"></div>
+                              </div>
+                          </div>
+
+                        <!-- form end -->
+                        <!--Modal footer for checkout-->
+                        <div class="modal-footer">
+                            <h6 class="subtotal">Subtotal: </h6>
+                            <button type="submit" id="mapBtn" class="btn btn-primary map-btn">Map</button>
+                            <a class="checkout-link" href="#" target = "_blank">
+                                <button type="button" class="btn btn-success checkout-btn">Checkout</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--END cart modal==================================-->
+
+    <!--About our Team-->
+    <div class="text-center" id="team">
+        <h4>OUR TEAM</h4>
+        <img src="assets/images/allie.png" class="team">
+        <img src="assets/images/Tresean2.jpg" class="team">
+        <img src="assets/images/Keivon.jpg" class="team">
+        <img src="assets/images/miguel.png" class="team">
+    </div>
+    <!-- back to top  -->
+    <div id="backtop" data-v-w="300, 800"> &#9650;</div>
     <!--FOOTER -->
     <footer>
         <a href="index.html">
-    <img src="leaf.png" class="footer"></a>
+            <img src="assets/images/leaf.png" class="footer">
+        </a>
         <a href="https://twitter.com/ABCSharkTank" target="_blank">
-    <img src="twitter.png" class="social"></a>
+            <img src="assets/images/twitter.png" class="social">
+        </a>
         <a href="https://www.instagram.com/sharktankabc/?hl=en" target="_blank">
-    <img src="instagram.png" class="social"></a>
+            <img src="assets/images/instagram.png" class="social">
+        </a>
         <a href="https://www.facebook.com/SharkTank/" target="_blank">
-    <img src="facebook.png" class="social"></a>
+            <img src="assets/images/facebook.png" class="social">
+        </a>
         <a href="https://www.linkedin.com/in/alliejaccard/" target="_blank">
-    <img src="linkedin.png" class="social"></a>
+            <img src="assets/images/linkedin.png" class="social">
+        </a>
+        <hr>
+        <p>&copy;2017 Fresh Gatherer</p>
     </footer>
 
-<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-<!--jQuery Ajax Library-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!--JavaScript Buy SDK (Shopify)-->
-<script src="http://sdks.shopifycdn.com/js-buy-sdk/v0/latest/shopify-buy.umd.polyfilled.min.js"></script>
-<script src="assets/js/app.js"></script>  
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+    <!--jQuery Ajax Library
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <!--JavaScript Buy SDK (Shopify)-->
+    <script src="http://sdks.shopifycdn.com/js-buy-sdk/v0/latest/shopify-buy.umd.polyfilled.min.js"></script>
+    <script src="assets/js/experience.js"></script>
+    <!-- google distance matrix  -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlOd3hYpDLPAdKLwjmQV9lJTiGVtiewcc&callback=initMap">
+    </script>
+    <script src="assets/js/maps.js"></script>
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>
