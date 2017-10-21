@@ -32,7 +32,7 @@ $(document).ready(function () {
             var newSmoothie = $("<img>").addClass("smoothie img-fluid").attr({
                 "src": products[x].attrs.images[0].src,
                 "data-toggle": "modal",
-                "data-target": ".bd-example-modal-lg",
+                "data-target": "#product-view",
                 "smoothie-ID": products[x].attrs.product_id,
                 "variant-ID": products[x].attrs.variants[0].id,
                 "in-stock": products[x].attrs.variants[0].available,
