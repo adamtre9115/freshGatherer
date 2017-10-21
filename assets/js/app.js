@@ -11,10 +11,8 @@ var shopClient = ShopifyBuy.buildClient({
 //When document is ready...
 $(document).ready(function () {
 
-    //Store user's plan name, plan quantity, and plan cost
-    var planName = "",
-        planQty = 0,
-        planCost = 0;
+    //Store user's subtotal (prices retrieved from server)
+    var subtotal = 0;
 
     //Create a cart
     var cart;
@@ -65,14 +63,12 @@ $(document).ready(function () {
                 cart.createLineItemsFromVariants({
                     variant: product.selectedVariant,
                     quantity: amount
-                }).then(cart => {
-                    console.log(cart);
-                });
+                })
             }
         });
     });
 
-    //On subscription click...
+    /*On subscription click...
     $(document).on("click", ".plan-btn", function () {
         //update user's subscription
         planName = $(this).attr("plan-name");
@@ -83,7 +79,7 @@ $(document).ready(function () {
         $(".plan-1").html($(".plan-1").attr("plan-name"));
         $(".plan-2").html($(".plan-2").attr("plan-name"));
         this.innerHTML = $(this).attr("plan-name") + ' \u2714';
-    });
+    });*/
 
     //On smoothie click update the modal content
     $(document).on("click", ".smoothie", function () {
@@ -104,32 +100,29 @@ $(document).ready(function () {
 
     //On cart-btn click...
     $(document).on("click", ".cart-btn", function () {
-        console.log(planQty);
-        console.log(cart.attrs.line_items.length);
-        //if (cart.attrs.line_items.length === planQty){
-            //generate checkout URL (new href)
-            $(".checkout-link").attr("href", cart.checkoutUrl);
-            //user can click checkout btn
-            //Clear previous items
-            //Iterate through cart
-            for (var c = 0; c < cart.attrs.line_items.length; c++) {
-                //Get image src, title, quantity from items in cart
-                var cartItemImg   = $("<td>").append($("<img>").attr("src", cart.attrs.line_items[c].image.src));
-                var cartItemTitle = $("<td>").html(cart.attrs.line_items[c].title);
-                var cartItemQty   = $("<td>").html(cart.attrs.line_items[c].quantity);
-                //Append to new div that contains img, title, qty info
-                var cartItemRow = $("<tr>").append(cartItemImg, cartItemTitle, cartItemQty);
-                //Append to correct location
-                $(".cart-body").append(cartItemRow);
-            }
-        //}
-        /*
-        else if (planQty === 0) {
-            console.log("Please choose a subscription plan");
+        //generate checkout URL (new href)
+        $(".checkout-link").attr("href", cart.checkoutUrl);
+        //Clear previous items
+        $(".cart-body").empty();
+        //Iterate through cart
+        for (var c = 0; c < cart.attrs.line_items.length; c++) {
+            //Get image src, title, quantity from items in cart
+            var cartItemImg = $("<td>").append($("<img class='img-fluid checkout-img'>").attr("src", cart.attrs.line_items[c].image.src));
+            var cartItemTitle = $("<td>").html(cart.attrs.line_items[c].title);
+            var cartItemId = $("<td>").html(cart.attrs.line_items[c].product_id);
+            var cartItemQty = $("<td>").html(cart.attrs.line_items[c].quantity);
+
+            //Append to new div that contains img, title, qty info
+            var cartItemRow = $("<tr>").append(cartItemImg, cartItemTitle, cartItemId, cartItemQty);
+
+            //Append to correct location
+            $(".cart-body").append(cartItemRow);
+
+            //Calculate subtotal (price * quantity, retrieved from server)
+            subtotal += (parseFloat(cart.attrs.line_items[c].price) * cart.attrs.line_items[c].quantity);
         }
-        else {
-            alert("Quantity in cart: " + cart.attrs.line_items.length + "   Subscription quantity: " + planQty);
-        }*/
+        //Update subtotal
+        $(".subtotal").html("Subtotal: $" + subtotal.toFixed(2));
     });
 
 });

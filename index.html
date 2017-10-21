@@ -3,11 +3,13 @@
 
 <head>
     <title>Fresh Gatherer</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="shortcut icon" href="assets/images/favicon.ico" />
     <!-- bootstrap 4 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -55,7 +57,8 @@
             <img src="assets/images/straw.png" class="howto">
             <p>Simply add a liquid base to your cup and blend, soak or heat. No prep, no mess.</p>
         </div>
-        <!--Choose Your Plan-->
+
+        <!--Choose Your Plan
         <div class="text-center" id="plan">
             <h4>CHOOSE YOUR PLAN</h4>
             <div class="plan">
@@ -80,7 +83,8 @@
                 <h6>$6.50 per smoothie | $156.00 per box</h6>
                 <button type="button" id="buy" class="btn btn-outline-success plan-btn plan-2" plan-name = "Monthly Plan" plan-qty= 24 plan-cost = 156.00>Monthly Plan</button>
             </div>
-        </div>
+        </div>-->
+
         <!--Smoothies-->
         <section id="smoothie">
             <h4>SMOOTHIES</h4>
@@ -92,9 +96,10 @@
             <!-- end container -->
         </section>
 
-    <!--BEGIN smoothie modal==================================-->
+        <!--BEGIN smoothie modal==================================-->
     </div>
-    <div class="modal fade bd-example-modal-lg" id="product-view" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal fade bd-example-modal-lg" id="product-view" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="container">
@@ -138,7 +143,8 @@
 
     <!--BEGIN cart modal==================================-->
     </div>
-    <div class="modal fade bd-example-modal-lg" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myCartModalLabel" aria-hidden="true">
+    <div class="modal fade bd-example-modal-lg" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myCartModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="container">
@@ -147,19 +153,29 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>Image</th>
-                                        <th>Product</th>
-                                        <th>Quantity</th>  
+                                        <th></th>
+                                        <th>Product Title</th>
+                                        <th>Product ID</th>
+                                        <th>Quantity</th>
                                     </tr>
                                 </thead>
                                 <tbody class="cart-body">
                                     <!--Append cart items here-->
                                 </tbody>
+                                <tfoot>
+
+                                </tfoot>
                             </table>
+                        </div>
+                        <div class="row">
+                            <!-- Form group here -->
+
                         </div>
                         <!--Modal footer for checkout-->
                         <div class="modal-footer">
-                            <a class = "checkout-link" href="#">
+                            <h6 class="subtotal">Subtotal: </h6>
+                            <button type="button" id="submit" class="btn btn-primary map-btn">Map</button>
+                            <a class="checkout-link" href="#">
                                 <button type="button" class="btn btn-success checkout-btn">Checkout</button>
                             </a>
                         </div>
@@ -216,9 +232,12 @@
         </a>
     </footer>
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
     <!--jQuery Ajax Library
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
     <!--JavaScript Buy SDK (Shopify)-->
